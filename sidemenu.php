@@ -17,9 +17,7 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-face-smile"></i> <span> Customer </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="m_customer_data.php">Baby</a></li>
-                        <li><a href="m_customer_add.php">Kids</a></li>
-                        <li><a href="m_customer_group.php">Pregnancy</a></li>
+                        <li><a href="master_customer.php"> Data Customer</a></li>
                     </ul>
                 </li>
 
