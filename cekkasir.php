@@ -5,8 +5,8 @@
     }
     
     // Cek Level User
-    if ($_SESSION['role']!="hr") {
-        die("Anda Bukan HRD");
+    if ($_SESSION['role']!="kasir") {
+        die("Anda Bukan Kasir");
     }
 ?>
 <!DOCTYPE html>
@@ -41,7 +41,7 @@
             <!-- Top Bar End -->
 
             <!-- Left Sidebar Start -->
-            <?php include "side_hr.php"; ?>
+            <?php include "side_kasir.php"; ?>
             <!-- Left Sidebar End -->
 
             <!-- Start right Content here -->
