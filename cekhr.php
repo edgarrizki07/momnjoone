@@ -30,7 +30,7 @@
 
     </head>
 
-
+    <!-- start body -->
     <body class="fixed-left">
 
         <!-- Begin page -->
