@@ -10,9 +10,7 @@
     }
 
 	 // Cek Status
-	if ($_SESSION['status']!="enable") {
-		header('location: 404.php');
-		}
+	
 ?>
 <!DOCTYPE html>
 <html>
