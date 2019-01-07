@@ -1,6 +1,28 @@
 <?php
 include("api/db_config.php");
 ?>
+
+<?php 
+if (isset($_POST['btn_simpan'])){
+
+$id_productgroup = $_POST['product_group'];
+$product_name    = $_POST['product_name'];
+$product_info    = $_POST['product_info'];
+$price           = $_POST['product_price'];
+$stock_limit     = $_POST['product_minstock'];
+$active          = $_POST['product_active'];
+$date_add       = "$datetime_set";
+
+
+$sql_product = "INSERT INTO m_product (id_productgroup, product_name, product_info, price, stock_limit, active, date_add) 
+values('$id_productgroup', '$product_name', '$product_info', '$price', '$stock_limit', '$active', '$date_add')";
+$create_product = mysqli_query($con,$sql_product);
+
+} else {
+
+}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -70,7 +92,7 @@ include("api/db_config.php");
 								<div class="card-box">
 									<h4 class="m-t-0 header-title"><b>Product Form</b></h4>
 
-									<form action="#" data-parsley-validate novalidate>
+									<form method="POST" action="" data-parsley-validate novalidate >
                                     <div class="row">
 
                                         <div class="col-md-11">
@@ -80,11 +102,11 @@ include("api/db_config.php");
                                             <div class="form-group">
                                                 <div class="input-group">
 
-                                                <select name="prodGroup" class="form-control select2" required id="product_group">
-                                                <option value="">Pilih</option>
+                                                <select name="product_group" class="form-control select2" id="product_group">
+                                                <option value="1">Pilih</option>
                                                 <?php
                                                 include "api/db_config.php";
-                                                $datapd = mysqli_query($con, "SELECT * FROM mproduct_group");
+                                                $datapd = mysqli_query($con, "SELECT * FROM m_product_group");
                                                 while ($rowpd=mysqli_fetch_array($datapd)) {
                                                     ?>
                                                 <option value="<?php echo $rowpd['id_productgroup']; ?>"><?php echo $rowpd['productgroup_name']; ?></option>
@@ -106,42 +128,43 @@ include("api/db_config.php");
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label for="field-1" class="control-label">Product Name</label>
-                                                <input type="text" name="prodName" class="form-control" id="field-1" placeholder="Natural Oil" required parsley-trigger="change">
+                                                <input type="text" name="product_name" class="form-control" id="field-1" placeholder="Natural Oil" required parsley-trigger="change">
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <!--<div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="field-1" class="control-label">ID Product</label>
-                                                <input type="text" name="prodKode" class="form-control" id="field-1" >
+                                                <input type="text" name="prdProduct" class="form-control" id="field-1" >
                                             </div>
                                         </div>
+                                        -->
 
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label for="field-1" class="control-label">Price</label>
-                                                <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="450000" required parsley-trigger="change">
+                                                <input type="text" name="product_price" class="form-control" id="field-1" placeholder="450000" required parsley-trigger="change">
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="field-1" class="control-label">Limit Stock</label>
-                                                <input type="text" name="prodLimit_stock" class="form-control" id="field-1" placeholder="2" required parsley-trigger="change">
+                                                <input type="text" name="product_minstock" class="form-control" id="field-1" placeholder="2" required parsley-trigger="change">
                                             </div>
                                         </div>
 
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label for="field-1" class="control-label">Product Info</label>
-                                                <textarea class="form-control autogrow" name="prodInfo" id="field-7" placeholder="Write something about product information"></textarea>
+                                                <textarea class="form-control autogrow" name="product_info" id="field-7" placeholder="Write something about product information"></textarea>
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="field-1" class="control-label">Active Status</label>
-                                                <select class="form-control" name="prodStatus" id="field-7" parsley-trigger="change" required>
+                                                <select class="form-control" name="product_active" id="field-7" parsley-trigger="change" required>
                                                     <option value="enable">Enable</option>
                                                     <option value="disable">Disable</option>
                                                 </select>
@@ -149,9 +172,8 @@ include("api/db_config.php");
                                         </div>
 
                                          <div class="col-md-12">
-                                            <div class="form-group text-center m-b-0">
-                                                <button class="btn w-md btn-default waves-effect waves-light" type="submit">
-                                                Save</button>
+                                            <div class="form-group text-center m-b-0"> 
+                                                <button type="submit" name="btn_simpan" class="btn w-md btn-default waves-effect waves-light"> Save</button>
                                                 <button type="button" onclick="goBack()" class="btn btn-primary w-md waves-effect waves-light m-l-5">
                                                 Back</button>
                                                 <button type="reset" class="btn w-md waves-effect waves-light m-l-5">
@@ -164,9 +186,6 @@ include("api/db_config.php");
 								</div>
 							</div>
 						</div>
-
-
-
 
                     </div> <!-- container -->
 

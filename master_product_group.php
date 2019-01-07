@@ -1,20 +1,6 @@
 <?php
 include("api/db_config.php");
-
-
-
-//hapus data service data//
-if(isset($_GET['del'])){
-    $hapus_productgroupdata=$_GET['del'];				
-            $query=mysqli_query($con, "delete from m_product_group where id_productgroup='$hapus_productgroupdata'");
-            if($query){
-            ?><script language="javascript">document.location.href="m_product_group.php"</script><?php
-            }else{
-            ?><script language="javascript">alert("data product group tidak dapat dihapus")</script><?php
-            ?><script language="javascript">document.location.href="m_product_group.php"</script><?php
-            } 				
-    }
-    ?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -60,7 +46,7 @@ if(isset($_GET['del'])){
     <!-- ========== Left Sidebar Start ========== -->
     <?php include "sidemenu.php"; ?>
     <!-- Left Sidebar End -->
-
+    
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -92,58 +78,32 @@ if(isset($_GET['del'])){
                     </div>
                 </div>
 
-
-                <?php
-				//untuk menyimpan transaksi Product		
-				if(isset($_POST['simpan'])){
-				$productgroup_name=$_POST['prdgName'];
-				$productgroup_info=$_POST['prdgInfo'];
-                $active=$_POST['prdgActive'];
-	
-                $querysrv=mysqli_query($con,"insert into m_product_group (productgroup_name, productgroup_info, active)
-                values(
-					'$productgroup_name',
-					'$productgroup_info',
-					'$active');");
-				}else{
-					unset($_POST['simpan']);
-				}
-		?>
-
-
-
 <?php
-$action=$_GET["update"];
-if ($action=="1") {
-    ?>
+$action=$_GET["actn"];
+if($action=="update"){
+?>
                 <!-- Update -->
                         <div class="row">
-							<div class="col-sm-12">
-								<div class="card-box">
+							<div class="col-sm-8">
+								<div class="card-box">                                        
 									<form action="#" data-parsley-validate novalidate>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label for="field-1" class="control-label">Edit Product Group</label>
+                                    <div class="row"> 
+                                        <div class="col-md-8"> 
+                                            <div class="form-group"> 
+                                                <label for="field-1" class="control-label">Edit Product Group</label> 
                                                 <input type="text" name="prodName" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label for="field-1" class="control-label">Brand</label>
-                                                <input type="text" name="prodName" class="form-control" id="field-1" placeholder="MOM N JO" required parsley-trigger="change">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label for="field-1" class="control-label">Active Status</label>
+                                            </div> 
+                                        </div> 
+                                        <div class="col-md-4"> 
+                                            <div class="form-group"> 
+                                                <label for="field-1" class="control-label">Active Status</label> 
                                                 <select class="form-control select2" name="prodStatus" id="field-7" parsley-trigger="change" required>
                                                     <option value="enable">Enable</option>
                                                     <option value="disable">Disable</option>
                                                 </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
+                                            </div> 
+                                        </div> 
+                                        <div class="col-md-12"> 
                                             <div class="form-group text-left m-b-0">
                                                 <button class="btn btn-sm w-sm btn-default waves-effect waves-light" type="submit">
                                                 Save</button>
@@ -156,40 +116,70 @@ if ($action=="1") {
 								</div>
 							</div>
 					    </div>
-<?php
+
+<?php 
+} else if($action=="delete"){
+?>
+
+                <!-- Delete -->
+                        <div class="row">
+							<div class="col-sm-12">
+								<div class="card-box">                                        
+									<form action="#" data-parsley-validate novalidate>
+                                    <div class="row"> 
+                                        <div class="col-md-4"> 
+                                            <div class="form-group"> 
+                                                <label for="field-1" class="control-label">Delete Product Group</label> 
+                                                <input type="text" name="prodName" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
+                                            </div> 
+                                        </div> 
+                                        <div class="col-md-8"> 
+                                            <div class="form-group"> 
+                                                <label for="field-1" class="control-label">Why delete this product ?</label> 
+                                                <input type="text" name="prodName" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
+                                            </div> 
+                                        </div>  
+                                        <div class="col-md-12"> 
+                                            <div class="form-group text-right m-b-0">
+                                                <button class="btn btn-sm w-sm btn-danger waves-effect waves-light" type="submit">
+                                                Delete</button>
+                                                <button type="button" onclick="goBack()" class="btn btn-primary btn-sm w-sm waves-effect waves-light m-l-5">
+                                                Back</button>
+                                            </div>
+                                        </div>
+									</div>
+									</form>
+								</div>
+							</div>
+					    </div>
+<?php 
 } else {
-    ?>
+?>
 
                 <!-- Create -->
                         <div class="row">
-							<div class="col-sm-12">
-								<div class="card-box">
+							<div class="col-sm-8">
+								<div class="card-box">                                        
 									<form action="#" data-parsley-validate novalidate>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label for="field-1" class="control-label">Add Product Group</label>
+                                    <div class="row"> 
+                                        <div class="col-md-8"> 
+                                            <div class="form-group"> 
+                                                <label for="field-1" class="control-label">Add Product Group</label> 
                                                 <input type="text" name="prodName" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label for="field-1" class="control-label">Brand</label>
-                                                <input type="text" name="prodName" class="form-control" id="field-1" placeholder="MOM N JO" required parsley-trigger="change">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label for="field-1" class="control-label">Active Status</label>
+                                            </div> 
+                                        </div> 
+                                        <div class="col-md-4"> 
+                                            <div class="form-group"> 
+                                                <label for="field-1" class="control-label">Active Status</label> 
                                                 <select class="form-control select2" name="prodStatus" id="field-7" parsley-trigger="change" required>
                                                     <option value="enable">Enable</option>
                                                     <option value="disable">Disable</option>
                                                 </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
+                                            </div> 
+                                        </div> 
+                                        <div class="col-md-12"> 
                                             <div class="form-group text-left m-b-0">
-                                                <button type="submit" name = "simpan" class="btn btn-sm w-sm btn-default waves-effect waves-light" onclick="addRecord()">
+                                                <button class="btn btn-sm w-sm btn-default waves-effect waves-light" type="submit">
                                                 Save</button>
                                                 <button type="reset" class="btn btn-sm w-sm waves-effect waves-light m-l-5">
                                                 Clear</button>
@@ -200,8 +190,8 @@ if ($action=="1") {
 								</div>
 							</div>
 					    </div>
-<?php
-}
+<?php 
+} 
 ?>
 
 
@@ -210,30 +200,18 @@ if ($action=="1") {
                     <div class="col-sm-12">
                         <div class="card-box table-responsive">
                         <form method="GET">
-
                         <table id="datatable-responsive"
                                    class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
                                    width="100%">
                                 <thead>
                                 <tr>
-                                    <th></th>
+                                    <th></th> 
                                     <th>Product Group</th>
-                                    <th>Brand</th>
                                     <th>Active</th>
                                     <th class="text-center">Action</th>
                                 </tr>
-                                </thead>
-                                <tbody>
-
-                                <?php 
-                                include "api/db_config.php";
-                                $data = mysqli_query($con, "SELECT * FROM m_product_group");
-                                $number = 1;
-                                while($rowpg=mysqli_fetch_array($data))
-                                {
-                                ?>
-
-
+                                </thead>  
+                                <tbody>                        
                                 <tr>
                                 <td>
                                     <a href="formproduct_create.php?group=">
@@ -243,16 +221,17 @@ if ($action=="1") {
                                 </td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
                                 <td class="text-center">
-                                    <a href="master_product_group.php?update=1">
+                                <a href="master_product_group.php?actn=update">
                                     <button type="button" class="btn btn-xs btn-warning waves-effect waves-light"> <i class="fa fa-edit m-r-5"></i> <span>
                                     Edit</span> </button>
-                                    </a>
-                                <button type="button" class="btn btn-xs btn-danger waves-effect waves-light"> <i class="fa fa-trash m-r-5"></i> <span>
-                                Delete</span> </button>
+                                </a>
+                                <a href="master_product_group.php?actn=delete">
+                                    <button type="button" class="btn btn-xs btn-danger waves-effect waves-light"> <i class="fa fa-trash m-r-5"></i> <span>
+                                    Delete</span> </button>
+                                </a>
                                 </td>
-                                </tr>
+                                </tr>  
                              </tbody>
                         </table>
                         </form>
@@ -261,7 +240,7 @@ if ($action=="1") {
                 </div>
                 <!-- end row -->
 
-
+                
 
             </div> <!-- container -->
         </div> <!-- content -->
@@ -359,7 +338,7 @@ if ($action=="1") {
         function goBack() {
             window.history.back();
         }
-    </script>
+    </script> 
 
 </body>
 </html>

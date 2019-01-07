@@ -84,7 +84,7 @@
                                                 <option value="">Pilih</option>
                                                 <?php
                                                 include "api/db_config.php";
-                                                $datapd = mysqli_query($con, "SELECT * FROM mproduct_group");
+                                                $datapd = mysqli_query($con, "SELECT * FROM m_product_group");
                                                 while ($rowpd=mysqli_fetch_array($datapd)) {
                                                     ?>
                                                 <option value="<?php echo $rowpd['id_productgroup']; ?>"><?php echo $rowpd['productgroup_name']; ?></option>
