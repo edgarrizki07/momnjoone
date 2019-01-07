@@ -145,7 +145,7 @@ include("api/db_config.php");
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                    <a href="formcustomer_create.php?cust=regular"">
+                    <a href="formcustomer_create.php?cust=regular">
                     <button class="btn btn-pink waves-effect waves-light col-xs-12"><i class="md md-add"></i> Add Regular</button>
                     </a>
                         <div class="widget-panel widget-style-2 bg-white m-t-20">

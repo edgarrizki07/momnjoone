@@ -1,6 +1,20 @@
 <?php
 include("api/db_config.php");
-?>
+
+
+
+//hapus data service data//
+if(isset($_GET['del'])){
+    $hapus_productgroupdata=$_GET['del'];				
+            $query=mysqli_query($con, "delete from m_product_group where id_productgroup='$hapus_productgroupdata'");
+            if($query){
+            ?><script language="javascript">document.location.href="m_product_group.php"</script><?php
+            }else{
+            ?><script language="javascript">alert("data product group tidak dapat dihapus")</script><?php
+            ?><script language="javascript">document.location.href="m_product_group.php"</script><?php
+            } 				
+    }
+    ?>
 
 <!DOCTYPE html>
 <html>
@@ -77,6 +91,26 @@ include("api/db_config.php");
                         </ol>
                     </div>
                 </div>
+
+
+                <?php
+				//untuk menyimpan transaksi Product		
+				if(isset($_POST['simpan'])){
+				$productgroup_name=$_POST['prdgName'];
+				$productgroup_info=$_POST['prdgInfo'];
+                $active=$_POST['prdgActive'];
+	
+                $querysrv=mysqli_query($con,"insert into m_product_group (productgroup_name, productgroup_info, active)
+                values(
+					'$productgroup_name',
+					'$productgroup_info',
+					'$active');");
+				}else{
+					unset($_POST['simpan']);
+				}
+		?>
+
+
 
 <?php
 $action=$_GET["update"];
@@ -155,7 +189,7 @@ if ($action=="1") {
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group text-left m-b-0">
-                                                <button class="btn btn-sm w-sm btn-default waves-effect waves-light" type="submit">
+                                                <button type="submit" name = "simpan" class="btn btn-sm w-sm btn-default waves-effect waves-light" onclick="addRecord()">
                                                 Save</button>
                                                 <button type="reset" class="btn btn-sm w-sm waves-effect waves-light m-l-5">
                                                 Clear</button>
@@ -176,6 +210,7 @@ if ($action=="1") {
                     <div class="col-sm-12">
                         <div class="card-box table-responsive">
                         <form method="GET">
+
                         <table id="datatable-responsive"
                                    class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
                                    width="100%">
@@ -189,6 +224,16 @@ if ($action=="1") {
                                 </tr>
                                 </thead>
                                 <tbody>
+
+                                <?php 
+                                include "api/db_config.php";
+                                $data = mysqli_query($con, "SELECT * FROM m_product_group");
+                                $number = 1;
+                                while($rowpg=mysqli_fetch_array($data))
+                                {
+                                ?>
+
+
                                 <tr>
                                 <td>
                                     <a href="formproduct_create.php?group=">
