@@ -10,9 +10,13 @@
                     <a href="index.php" class="waves-effect"><i class="ti-dashboard"></i> <span> Dashboard </span> </a>
                 </li>
 
+                 <li class="has_sub">
+                    <a href="customer_mpc.php" class="waves-effect"><i class="ti-crown"></i> <span> MPC</span></a>
+                 </li>
+                 
                 <li class="has_sub">
-                    <a href="pos.php" class="waves-effect"><i class="ti-shopping-cart"></i> <span> Point Of Sale </span> </a>
-                </li>
+                    <a href="sales_transaction.php" class="waves-effect"><i class="ti-shopping-cart"></i> <span>Transaction </span> </a>
+                 </li>
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-face-smile"></i> <span> Customer </span> <span class="menu-arrow"></span></a>
@@ -32,18 +36,25 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-bookmark-alt"></i> <span> Products </span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-bookmark-alt"></i> <span> Products Data </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="mproduct_data.php">Product Data</a></li>
-                        <li><a href="mproduct_group.php">Group</a></li>
+                        <li><a href="master_product.php"> Products Data </a></li>
+                        <li><a href="master_product_group.php">Product Group</a></li>
                     </ul>
                 </li>
+                <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="ti-package"></i> <span> Inventory </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Stock</a></li>
+                                    <li><a href="#">Incomming Stock</a></li>
+                                </ul>
+                            </li>
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-bookmark-alt"></i> <span> Prepaid Package </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li><a href="prepaid_package.php">Prepaid Package Data</a></li>
-                        <li><a href="formpackage_prepaid.php">Create Prepaid New</a></li>
+                        <li><a href="formpackage_prepaid.php">Create Prepaid </a></li>
                         <li><a href="prepaidpack_category.php">Category</a></li>
                     </ul>
                 </li>
