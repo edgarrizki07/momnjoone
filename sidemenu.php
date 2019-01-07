@@ -13,9 +13,12 @@
                  <li class="has_sub">
                     <a href="customer_mpc.php" class="waves-effect"><i class="ti-crown"></i> <span> MPC</span></a>
                  </li>
-                 
+
                 <li class="has_sub">
-                    <a href="sales_transaction.php" class="waves-effect"><i class="ti-shopping-cart"></i> <span>Transaction </span> </a>
+                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-shopping-cart"></i> <span>Transaction </span> <span class = "menu-arrow"></span> </a>
+                    <ul class="list-unstyled">
+                        <li><a href="sales_transaction.php"> Sles Transaction </a></li>
+                    </ul>
                  </li>
 
                 <li class="has_sub">
@@ -24,14 +27,13 @@
                         <li><a href="master_customer.php"> Data Customer</a></li>
                     </ul>
                 </li>
-
                 <li class="text-muted menu-title">Menu</li>
 
                     <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-bookmark-alt"></i> <span> Services </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="mservice_data.php">Service Data</a></li>
-                        <li><a href="mservice_group.php">Group</a></li>
+                        <li><a href="master_service.php">Service Master</a></li>
+                        <li><a href="master_service_group.php">Service Master Group</a></li>
                     </ul>
                 </li>
 
@@ -42,13 +44,6 @@
                         <li><a href="master_product_group.php">Product Group</a></li>
                     </ul>
                 </li>
-                <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="ti-package"></i> <span> Inventory </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Stock</a></li>
-                                    <li><a href="#">Incomming Stock</a></li>
-                                </ul>
-                            </li>
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-bookmark-alt"></i> <span> Prepaid Package </span> <span class="menu-arrow"></span></a>
@@ -74,6 +69,14 @@
                                     <li><a href="hr_absensi.php">Absensi</a></li>
                                     <li><a href="#">Manajemen Absensi</a></li>
                                     <li><a href="master_employee.php">Data Karyawan</a></li>
+                                </ul>
+                            </li>
+
+                <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="ti-package"></i> <span> Inventory </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Stock</a></li>
+                                    <li><a href="#">Incomming Stock</a></li>
                                 </ul>
                             </li>
 
