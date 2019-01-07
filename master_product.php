@@ -70,6 +70,8 @@ include("api/db_config.php");
                     </div>
                 </div>
 
+            
+
                         <div class="row">
 							<div class="col-sm-12">
 								<div class="card-box widget-inline">
@@ -116,11 +118,21 @@ include("api/db_config.php");
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+
+                <?php 
+                include "api/db_config.php";
+                $data = mysqli_query($con, "SELECT * FROM m_product");
+                $number = 1;
+                while($rowpg=mysqli_fetch_array($data))
+                {
+                ?>
+                <tr>
+    
+                                 <td><?php echo $rowpg['product_name'] ?></td>
+                                <td><?php echo $rowpg['group'] ?></td>
+                                <td><?php echo $rowpg['stock_limit'] ?></td>
+                                <td><?php echo $rowpg['price'] ?></td>
+                                <td>
                                 <td class="text-center">
                                 <a href="formproduct_update.php?update=">
                                 <button type="button" class="btn btn-xs btn-warning waves-effect waves-light"> <i class="fa fa-edit m-r-5"></i> <span>
@@ -132,10 +144,17 @@ include("api/db_config.php");
                                 </td>
                                 </a>
                             </tr>
+                            <?php
+                }
+                ?>
+                                
+
                             </tbody>
                             </table>
                         </div>
                     </div>
+
+
                 </div> <!-- end row -->
 
             <!-- container -->
