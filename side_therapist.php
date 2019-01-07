@@ -4,21 +4,13 @@
         <div id="sidebar-menu">
             <ul>
 
-                <li class="text-muted menu-title">Menu</li>
+                <li class="text-muted menu-title">Therapist Menu</li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-server"></i> <span> Absent </span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-server"></i> <span> Presensi Terapist </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="master_product.php">month</a></li>
-                        <li><a href="master_service.php">overtime</a></li>
-                    </ul>
-                </li>
-
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-settings"></i> <span> Settings </span> <span class="menu-arrow"></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="store.php">Store</a></li>
-                        <li><a href="user.php">User</a></li>
+                        <li><a href="master_product.php">Presensi Data</a></li>
+                        <li><a href="master_service.php">Laporan Omset Data</a></li>
                     </ul>
                 </li>
 

@@ -42,8 +42,8 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-bookmark-alt"></i> <span> Prepaid Package </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="prepaidpack_tab.php">Prepaid Package All</a></li>
-                        <li><a href="prepaidpack_new.php">Create New</a></li>
+                        <li><a href="prepaid_package.php">Prepaid Package Data</a></li>
+                        <li><a href="formpackage_prepaid.php">Create Prepaid New</a></li>
                         <li><a href="prepaidpack_category.php">Category</a></li>
                     </ul>
                 </li>
