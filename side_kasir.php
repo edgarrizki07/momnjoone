@@ -1,24 +1,27 @@
-<div class="left dide-menu">
- <div class="sidebar-inner slimsscrollleft">
-   <!--- Divider -->
-		<div id="sidebar-menu">
-		<ul>
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+        <!--- Divider -->
+        <div id="sidebar-menu">
+            <ul>
 
-		<li class="text-muted menu-title">Menu</li>
-		<li class="list-unstyled">
-		<li><a href="master_absensi.php">absensi</a></li>
-		<li><a href="master_managemen_absensi.php">management absensi</a></li>
-		<li><a href="master_datakaryawan.php">datakaryawan</a></li>
-		</ul>
-		</li>
-		
-		<li class="has_sub">
-		<a href="logout.php" class="waves-effect"><i class="ti-power-off"></i> <span> Log out</span> </a>
-		</li>
+            
+                <li class="text-muted menu-title">Menu</li>
 
-		</ul>
-		<div class="clearfix"></div>
-		</div>
-		<div class="clearfix"></div>
-		</div>
-		</div>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-server"></i> <span> Master Kasir </span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="master_product.php">Product</a></li>
+                        <li><a href="master_service.php">Master View Product</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="logout.php" class="waves-effect"><i class="ti-power-off"></i> <span> Log out</span> </a>
+                </li>
+
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
