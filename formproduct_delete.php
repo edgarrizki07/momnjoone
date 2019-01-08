@@ -1,3 +1,23 @@
+
+<?php
+include("api/db_config.php");
+
+
+//hapus data service data//
+if(isset($_GET['del'])){
+    $hapus_product=$_GET['del'];				
+            $query=mysqli_query($con, "delete from m_product where id_product='$hapus_product'");
+            if($query){
+            ?><script language="javascript">document.location.href="master_product.php"</script><?php
+            }else{
+            ?><script language="javascript">alert("Data Product Tidak Dapat dihapus")</script><?php
+            ?><script language="javascript">document.location.href="master_product.php"</script><?php
+            } 				
+    }
+
+    ?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>

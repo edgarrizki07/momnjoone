@@ -156,22 +156,44 @@ if($action=="update"){
 } else {
 ?>
 
+
+
+                     <?php
+                    include("api/db_config.php");
+                    ?>
+
+                    <?php
+                    if (isset($_POST['btn_simpan'])){
+
+                    $id_productgroup = $_POST['product_group'];
+                    $productgroup_name = $_POST['product_name'];
+                    //$productgroup_info = $_POST['product_info'];
+                    $active = $_POST = ['product_active'];
+                    $date_add       = "$datetime_set";
+
+                    $sql_product = "INSERT INTO m_product_group (id_productgroup, productgroup_name, productgroup_info, active, date_add) 
+                    values('$id_productgroup', '$productgroup_name', '$active','$date_add')";
+                    } else {
+
+                    }
+                    ?>
+
                 <!-- Create -->
                         <div class="row">
 							<div class="col-sm-8">
-								<div class="card-box">                                        
-									<form action="#" data-parsley-validate novalidate>
+								<div class="card-box">      
+                                <form method="POST" action="" data-parsley-validate novalidate >                                  
                                     <div class="row"> 
                                         <div class="col-md-8"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Add Product Group</label> 
-                                                <input type="text" name="prodName" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
+                                                <input type="text" name="product_name" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
                                             </div> 
                                         </div> 
                                         <div class="col-md-4"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Active Status</label> 
-                                                <select class="form-control select2" name="prodStatus" id="field-7" parsley-trigger="change" required>
+                                                <select class="form-control select2" name="product_active" id="field-7" parsley-trigger="change" required>
                                                     <option value="enable">Enable</option>
                                                     <option value="disable">Disable</option>
                                                 </select>
@@ -179,8 +201,7 @@ if($action=="update"){
                                         </div> 
                                         <div class="col-md-12"> 
                                             <div class="form-group text-left m-b-0">
-                                                <button class="btn btn-sm w-sm btn-default waves-effect waves-light" type="submit">
-                                                Save</button>
+                                            <button type="submit" name="btn_simpan" class="btn w-md btn-default waves-effect waves-light"> Save</button>
                                                 <button type="reset" class="btn btn-sm w-sm waves-effect waves-light m-l-5">
                                                 Clear</button>
                                             </div>
