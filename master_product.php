@@ -128,7 +128,7 @@ include("api/db_config.php");
                 ?>
                 <tr>
     
-                                 <td><?php echo $rowpg['product_name'] ?></td>
+                                <td><?php echo $rowpg['product_name'] ?></td>
                                 <td><?php echo $rowpg['group'] ?></td>
                                 <td><?php echo $rowpg['stock_limit'] ?></td>
                                 <td><?php echo $rowpg['price'] ?></td>
@@ -146,7 +146,7 @@ include("api/db_config.php");
                             </tr>
                             <?php
                 }
-                ?>
+               ?>
                                 
 
                             </tbody>

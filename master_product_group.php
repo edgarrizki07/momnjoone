@@ -2,6 +2,23 @@
 include("api/db_config.php");
 ?>
 
+<?php
+if (isset($_POST['btn_simpan'])){
+
+$id_productgroup = $_POST['product_group'];
+$productgroup_name = $_POST['productgroup_name'];
+$productgroup_info = $_POST['productgroup_info'];
+$active = $_POST = ['productgroup_active'];
+$date_add       = "$datetime_set";
+
+$sql_productgroup = "INSERT INTO m_product_group (id_productgroup, productgroup_name, productgroup_info, active, date_add) 
+values('$id_productgroup', '$productgroup_name', '$productgroup_info','$active','$date_add')";
+$create_productgroup = mysqli_query($con,$sql_productgroup);
+
+} else {
+
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,14 +79,14 @@ include("api/db_config.php");
                         <div class="btn-group pull-right m-t-15">
                             <!--<button class="btn btn-default waves-effect waves-light" data-toggle="modal" data-target="#addProductGroup-modal"><i class="md md-add"></i> Add New</button>-->
                         </div>
-
+                        <a href="formproductgroup_create.php">
                         <h4 class="page-title">Product Group</h4>
                         <ol class="breadcrumb">
                             <li>
                                 <a href="index.php">Dashboard</a>
                             </li>
                             <li>
-								<a href="master_product.php">Product</a>
+								<a href="master_product_group.php">Product</a>
 							</li>
 							<li class="active">
 								Product Group
@@ -156,44 +173,29 @@ if($action=="update"){
 } else {
 ?>
 
-
-
-                     <?php
-                    include("api/db_config.php");
-                    ?>
-
-                    <?php
-                    if (isset($_POST['btn_simpan'])){
-
-                    $id_productgroup = $_POST['product_group'];
-                    $productgroup_name = $_POST['product_name'];
-                    //$productgroup_info = $_POST['product_info'];
-                    $active = $_POST = ['product_active'];
-                    $date_add       = "$datetime_set";
-
-                    $sql_product = "INSERT INTO m_product_group (id_productgroup, productgroup_name, productgroup_info, active, date_add) 
-                    values('$id_productgroup', '$productgroup_name', '$active','$date_add')";
-                    } else {
-
-                    }
-                    ?>
-
                 <!-- Create -->
                         <div class="row">
 							<div class="col-sm-8">
-								<div class="card-box">      
-                                <form method="POST" action="" data-parsley-validate novalidate >                                  
+								<div class="card-box"> 
+                                <form method="POST" action="" data-parsley-validate novalidate >                                       
                                     <div class="row"> 
                                         <div class="col-md-8"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Add Product Group</label> 
-                                                <input type="text" name="product_name" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
+                                                <input type="text" name="productgroup_name" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
                                             </div> 
                                         </div> 
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="field-1" class="control-label">Product Group Info</label>
+                                                <input type="text" name="productgroup_info" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
+                                            </div>
+                                        </div>
                                         <div class="col-md-4"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Active Status</label> 
-                                                <select class="form-control select2" name="product_active" id="field-7" parsley-trigger="change" required>
+                                                <select class="form-control select2" name="active" id="field-7" parsley-trigger="change" required>
                                                     <option value="enable">Enable</option>
                                                     <option value="disable">Disable</option>
                                                 </select>
@@ -232,16 +234,26 @@ if($action=="update"){
                                     <th class="text-center">Action</th>
                                 </tr>
                                 </thead>  
-                                <tbody>                        
+                                <tbody>    
+
+                                <?php 
+                                    include "api/db_config.php";
+                                     $data = mysqli_query($con, "SELECT * FROM m_product_group");
+                                     $number = 1;
+                                     while($rowpg=mysqli_fetch_array($data))
+                                     {
+                                ?>                    
                                 <tr>
                                 <td>
-                                    <a href="formproduct_create.php?group=">
+                                    <a href="formproductgroup_create.php?group=">
                                     <button type="button" class="btn btn-xs btn-purple waves-effect waves-light"> <i class="fa fa-plus-square-o m-r-5"></i> <span>
                                     Add Product</span> </button>
                                     </a>
                                 </td>
-                                <td></td>
-                                <td></td>
+                                <td><?php echo $rowpg['productgroup_name'] ?></td>
+                                <td><?php echo $rowpg['productgroup_info'] ?></td>
+                                <td><?php echo $rowpg['active'] ?></td>
+                                <td>
                                 <td class="text-center">
                                 <a href="master_product_group.php?actn=update">
                                     <button type="button" class="btn btn-xs btn-warning waves-effect waves-light"> <i class="fa fa-edit m-r-5"></i> <span>
@@ -250,9 +262,13 @@ if($action=="update"){
                                 <a href="master_product_group.php?actn=delete">
                                     <button type="button" class="btn btn-xs btn-danger waves-effect waves-light"> <i class="fa fa-trash m-r-5"></i> <span>
                                     Delete</span> </button>
-                                </a>
                                 </td>
-                                </tr>  
+                                </a>
+                                </tr> 
+                            <?php          
+                                }
+                         ?>
+                     
                              </tbody>
                         </table>
                         </form>
