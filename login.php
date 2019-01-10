@@ -2,7 +2,7 @@
 session_start();
 
 // include file
-include('api/db_config.php');
+include('include/db_config.php');
 include('include/cek_role.php');
 
 

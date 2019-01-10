@@ -1,4 +1,4 @@
 <?php
 session_start();
-    include('index.php');
+    include('index.admin.php');
 ?>

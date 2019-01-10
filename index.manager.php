@@ -1,6 +1,16 @@
 <?php
-include("../../cekadmin.php");
-include("api/db_config.php");
+    include_once('include/cek_login.php');
+    if (!isset($_SESSION['email'])) {
+        die("Anda Belum Login");
+    }
+    
+    // Cek Level User
+    if ($_SESSION['role']!="manager") {
+        die("Anda Bukan Manager");
+    }
+
+	 // Cek Status
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,18 +54,9 @@ include("api/db_config.php");
                     <div class="container">
 
                         <!-- Page-Title -->
-              <?php
-                    $sesi = $_SESSION['username'];
-                    $query="SELECT username, nama_lengkap FROM users WHERE username='$sesi'";
-                    $result=mysqli_query($con, $query);
-                    $row=mysqli_fetch_assoc($result);
-                    $username=$row['username'];
-                    $namalengkap=$row['nama_lengkap'];
-                ?>
-
                         <div class="row">
                             <div class="col-sm-12">
-                                <div class="btn-group pull-right m- t-15">
+                                <div class="btn-group pull-right m-t-15">
                                     <button type="button" class="btn btn-default dropdown-toggle waves-effect" data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
                                     <ul class="dropdown-menu drop-menu-right" role="menu">
                                         <li><a href="#">Action</a></li>
@@ -65,8 +66,8 @@ include("api/db_config.php");
                                         <li><a href="#">Separated link</a></li>
                                     </ul>
                                 </div>
-                                <h4 class="page-title">Dashboard 2</h4>
-                                <p class="text-muted page-title-alt">Welcome to momnjo admin panel !</p>
+                                <h4 class="page-title">Dashboard Manager</h4>
+                                <p class="text-muted page-title-alt">Welcome to admin panel !</p>
                             </div>
                         </div>
 
@@ -151,3 +152,4 @@ include("api/db_config.php");
 
     </body>
 </html>
+
