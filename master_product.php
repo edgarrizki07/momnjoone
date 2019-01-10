@@ -118,7 +118,7 @@ include("include/db_config.php");
                             <tbody>
 
                 <?php 
-                include "api/db_config.php";
+                include "include/db_config.php";
                 $data = mysqli_query($con, "SELECT * FROM m_product");
                 $number = 1;
                 while($rowpg=mysqli_fetch_array($data))

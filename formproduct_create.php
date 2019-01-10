@@ -105,7 +105,7 @@ $create_product = mysqli_query($con,$sql_product);
                                                 <select name="product_group" class="form-control select2" id="product_group">
                                                 <option value="1">Pilih</option>
                                                 <?php
-                                                include "api/db_config.php";
+                                                include "include/db_config.php";
                                                 $datapd = mysqli_query($con, "SELECT * FROM m_product_group");
                                                 while ($rowpd=mysqli_fetch_array($datapd)) {
                                                     ?>

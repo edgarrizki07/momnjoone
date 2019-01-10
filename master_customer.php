@@ -170,24 +170,51 @@ include("include/db_config.php");
                             <tr>
                                 <th></th> 
                                 <th>ID Customer</th> 
+                                <th> Category </th>
                                 <th>Full Name</th>
-                                <th>Category</th>
-                                <th>Address</th> 
+                                <th>Gender</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Zip Code</th> 
+                                <th>City</th> 
+                                <th>Emergency Phone Mobile</th>
+                                <th> Emergency Status </th>
+                                <th> Phone Mobile </th>
+                                <th> Nick Name </th>
+                                <th> Date Of Birth </th>
+                                <th> How Can your Customer Know About Us </th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>  
                             <tbody>
-                            <tr>
+
+                            <?php 
+                include "include/db_config.php";
+                $data = mysqli_query($con, "SELECT * FROM customer");
+                $number = 1;
+                while($rowpg=mysqli_fetch_array($data))
+                {
+                ?>
+                <tr>
                                 <td>
                                     <a href="formsales_create.php">
                                     <button type="button" class="btn btn-xs btn-purple waves-effect waves-light"> <i class="fa fa-plus-square-o m-r-5"></i> <span>
                                    New Transaction</span> </button>
                                     </a>
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td> <td><?php echo $rowpg['id_customer'] ?></td> </td>
+                                <td><td><?php echo $rowpg['customer_group'] ?></td></td>
+                                <td><td><?php echo $rowpg['fullname'] ?></td> </td>
+                                <td><td><?php echo $rowpg['gender'] ?></td> </td>
+                                <td><td><?php echo $rowpg['email'] ?></td> </td>
+                                <td><td><?php echo $rowpg['address'] ?></td> </td>
+                                <td><td><?php echo $rowpg['kodepos'] ?></td> </td>
+                                <td><td><?php echo $rowpg['city'] ?></td></td>
+                                <td><td><?php echo $rowpg['emergency _phone'] ?></td></td>
+                                <td><td><?php echo $rowpg['phone_mobile'] ?></td></td>
+                                <td><td><?php echo $rowpg['nickname']?></td></td>
+                                <td><?php echo $rowpg['birtday'] ?></td>
+                                <td><?php echo $rowpg['customer_info'] ?></td>
                                 <td class="text-center">
                                 <a href="?update=">
                                 <button type="button" class="btn btn-xs btn-warning waves-effect waves-light"> <i class="fa fa-edit m-r-5"></i> <span>
@@ -199,6 +226,9 @@ include("include/db_config.php");
                                 </td>
                                 </a>
                             </tr>  
+                            <?php
+                }
+               ?>
                             </tbody>
                             </table>
                         </div>
