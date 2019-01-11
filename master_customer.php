@@ -174,10 +174,12 @@ include("include/db_config.php");
                                 <th>Full Name</th>
                                 <th>Gender</th>
                                 <th>Email</th>
-                                <th>Address</th>
+                                <th>Address Customer</th>
                                 <th>Zip Code</th> 
                                 <th>City</th> 
                                 <th>Emergency Phone Mobile</th>
+                                <th> Emergency Name </th>
+                                <th> Emergency Phone </th>
                                 <th> Emergency Status </th>
                                 <th> Phone Mobile </th>
                                 <th> Nick Name </th>
@@ -207,14 +209,16 @@ include("include/db_config.php");
                                 <td><td><?php echo $rowpg['fullname'] ?></td> </td>
                                 <td><td><?php echo $rowpg['gender'] ?></td> </td>
                                 <td><td><?php echo $rowpg['email'] ?></td> </td>
-                                <td><td><?php echo $rowpg['address'] ?></td> </td>
+                                <td><td><?php echo $rowpg['address_customer'] ?></td> </td>
                                 <td><td><?php echo $rowpg['kodepos'] ?></td> </td>
                                 <td><td><?php echo $rowpg['city'] ?></td></td>
-                                <td><td><?php echo $rowpg['emergency _phone'] ?></td></td>
-                                <td><td><?php echo $rowpg['phone_mobile'] ?></td></td>
+                                <th><td><?php echo $rowpg['emergency_name'] ?> </td> </td>
+                                <td><td><?php echo $rowpg['emergency_phone'] ?></td></td>
+                                <td><td><?php echo $rowpg['emergency_status'] ?> </td></td>
+                                <td><td><?php echo $rowpg['phone_mobile'] ?> </td></td>
                                 <td><td><?php echo $rowpg['nickname']?></td></td>
-                                <td><?php echo $rowpg['birtday'] ?></td>
-                                <td><?php echo $rowpg['customer_info'] ?></td>
+                                <td><?php echo $rowpg['birtday'] ?></td></td>
+                                <td><?php echo $rowpg['customer_info'] ?></td></td>
                                 <td class="text-center">
                                 <a href="?update=">
                                 <button type="button" class="btn btn-xs btn-warning waves-effect waves-light"> <i class="fa fa-edit m-r-5"></i> <span>

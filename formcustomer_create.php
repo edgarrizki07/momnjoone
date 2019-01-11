@@ -330,7 +330,7 @@ if($cat_cust=="pregnancy"){
                                         
                                         <div class="col-md-6">
                                             <div class="form-group"> 
-                                                <label for="field-1" class="control-label">email</label> 
+                                                <label for="field-1" class="control-label">ema l</label> 
                                                 <input type="email" name="prodPrice" class="form-control" id="field-1" placeholder="nama@domain.com" required parsley-trigger="change"> 
                                             </div> 
                                         </div> 
@@ -425,6 +425,47 @@ if($cat_cust=="pregnancy"){
 <?php 
 } else if($cat_cust=="kids"){
 ?>
+
+<?php
+    $nocs    = mysqli_query($con, "SELECT MAX (id_customer) FROM customer");
+    $nocustomer  = $nocs + 1;
+    $nocustomer_mix = str_pad($nocustomer, 6, "0", STR_PAD_LEFT);
+
+    if (isset($_POST['kids_btn_simpan'])){
+        $date_add   = "$datetime_set";
+        $id_store = "2";
+        $id_customer = $_POST['kids_id_customer'];
+        $fullname   = $_POST['kids_fullname'];
+        $nickname   = $_POST['kids_nickname'];
+        $customer_group = $_POST['kids_customer_group'];
+        $gender = $_POST['kids_gender'];`  
+        $bd_dd = $_POST['kids_bd_dd'];
+        $bd_mm = $_POST['kids_bd_mm'];
+        $bd_yyyy = $_POST['kids_bd_yyyy'];
+
+        $email = $_POST['kids_email'];
+        $phone_mobile = $_post['kids_phone_mobile'];
+        $address_customer = $_POST ['kids_address_customer'];
+        $kodepos    = $_POST ['kids_kodepos'];
+        $city   = $_POST ['kids_city'];
+        $emergency_name = $_POST['kids_emergency_name'];
+        $emergency_phone = $_POST['kids_emergency_phone'];
+        $emergency_status = $_POST['kids_emergency_status'];
+        $customer_info = $_POST['kids_customer_info'];
+        $keterangan = $_POST['kids_keterangan'];
+
+        $sql_customer="INSERT INTO customer (id_store, id_customer, fullname, nickname, customer_group, gender, birthday, email, phone_mobile, address_customer, kodepos, city, emergency_name, emergency_phone, emergency_status, customer_info, keterangan, date_add) 
+        values('$id_store', '$id_customer', '$fullname', '$nickname', '$customer_group', '$gender', '$birthday', '$email', '$phone_mobile', '$address_customer', '$kodepos', '$city', '$emergency_name', '$emergency_phone', '$emergency_status', '$customer_info','$keterangan', '$date_add')";
+$create_customer = mysqli_query($con,$sql_customer);
+
+
+
+} else {
+
+}
+?>
+
+
 <!-- Add_Kids -->
 
                         <div class="row">
@@ -437,35 +478,35 @@ if($cat_cust=="pregnancy"){
                                         <div class="col-md-6"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Customer ID</label> 
-                                                <input type="text" name="prodName" class="form-control" id="field-1" value="10000" required parsley-trigger="change" readonly>
+                                                <input type="text" name="kids_id_customer" class="form-control" id="field-1" value="10000" required parsley-trigger="change" readonly>
                                             </div> 
                                         </div>
 
                                         <div class="col-md-6"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Category</label> 
-                                                <input type="text" name="prodName" class="form-control" id="field-1" value="kids" required parsley-trigger="change" readonly>
+                                                <input type="text" name="kids_customer_group" class="form-control" id="field-1" value="kids" required parsley-trigger="change" readonly>
                                             </div> 
                                         </div>  
                                        
                                         <div class="col-md-6"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Full Name</label> 
-                                                <input type="text" name="prodKode" class="form-control" id="field-1" required parsley-trigger="change">
+                                                <input type="text" name="kids_fullname" class="form-control" id="field-1" required parsley-trigger="change">
                                             </div> 
                                         </div> 
 
                                         <div class="col-md-6"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Nickname</label> 
-                                                <input type="text" name="prodKode" class="form-control" id="field-1" required parsley-trigger="change">
+                                                <input type="text" name="kids_nickname" class="form-control" id="field-1" required parsley-trigger="change">
                                             </div> 
                                         </div> 
 
                                         <div class="col-md-6"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Gender</label> 
-                                                <select class="form-control" name="prodStatus" id="field-7" parsley-trigger="change" required>
+                                                <select class="form-control" name="kids_gender" id="field-7" parsley-trigger="change" required>
                                                     <option value="female">Female</option>
                                                     <option value="male">Male</option>
                                                 </select>
@@ -477,13 +518,13 @@ if($cat_cust=="pregnancy"){
                                                 <label for="field-1" class="control-label">Date of Birth</label>
                                                 <div class="row"> 
                                                     <div class="form-group col-md-4 col-sm-4 col-xs-4">
-                                                    <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="08 (Date)" required parsley-trigger="change" maxlength="2"> 
+                                                    <input type="text" name="kids_bd_dd" class="form-control" id="field-1" placeholder="08 (Date)" required parsley-trigger="change" maxlength="2"> 
                                                     </div>
                                                     <div class="form-group col-md-4 col-sm-4 col-xs-4">
-                                                    <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="12 (month)" required parsley-trigger="change" maxlength="2"> 
+                                                    <input type="text" name="kids_bd_mm" class="form-control" id="field-1" placeholder="12 (month)" required parsley-trigger="change" maxlength="2"> 
                                                     </div>
                                                     <div class="form-group col-md-4 col-sm-4 col-xs-4">
-                                                    <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="1990 (year)" required parsley-trigger="change" maxlength="4"> 
+                                                    <input type="text" name="kids_bd_yyyy" class="form-control" id="field-1" placeholder="1990 (year)" required parsley-trigger="change" maxlength="4"> 
                                                     </div>
                                                 </div>
                                             </div> 
@@ -492,56 +533,56 @@ if($cat_cust=="pregnancy"){
                                         <div class="col-md-6">
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">email</label> 
-                                                <input type="email" name="prodPrice" class="form-control" id="field-1" placeholder="nama@domain.com" required parsley-trigger="change"> 
+                                                <input type="email" name="kids_email" class="form-control" id="field-1" placeholder="nama@domain.com" required parsley-trigger="change"> 
                                             </div> 
                                         </div> 
 
                                         <div class="col-md-6">
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Phone Mobile</label> 
-                                                <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
+                                                <input type="text" name="kids_phone_mobile" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
                                             </div> 
                                         </div> 
 
                                         <div class="col-md-12"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Address</label> 
-                                                <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
+                                                <input type="text" name="kids_address_customer" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
                                             </div> 
                                         </div>
                                         
                                         <div class="col-md-4">
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Zip Code (Kode Pos)</label> 
-                                                <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
+                                                <input type="text" name="kids_kodepos" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
                                             </div> 
                                         </div> 
 
                                         <div class="col-md-8">
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">City</label> 
-                                                <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
+                                                <input type="text" name="kids_city" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
                                             </div> 
                                         </div>              
 
                                         <div class="col-md-4">
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Emergency Name</label> 
-                                                <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
+                                                <input type="text" name="kids_emergency_name" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
                                             </div> 
                                         </div> 
 
                                         <div class="col-md-4">
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Emergency Phone Mobile</label> 
-                                                <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
+                                                <input type="text" name="kids_emergency_phone" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
                                             </div> 
                                         </div> 
 
                                         <div class="col-md-4">
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Emergency Status</label> 
-                                                <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
+                                                <input type="text" name="kids_emergency_status" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
                                             </div> 
                                         </div>
 
@@ -551,7 +592,7 @@ if($cat_cust=="pregnancy"){
                                                 <label for="field-1" class="control-label">How can your customers know about us?</label> 
                                                 <div class="row"> 
                                                     <div class="form-group col-md-6 col-sm-6">
-                                                        <select class="form-control" name="prodStatus" id="field-7" parsley-trigger="change" required>
+                                                        <select class="form-control" name="kids_customer_info" id="field-7" parsley-trigger="change" required>
                                                         <option value="">Select</option>
                                                         <option value="internet">Internet</option>
                                                         <option value="teman">Teman</option>
@@ -560,7 +601,7 @@ if($cat_cust=="pregnancy"){
                                                         </select> 
                                                     </div>
                                                     <div class="form-group col-md-6 col-sm-6">
-                                                        <input type="text" name="prodPrice" class="form-control" id="field-1" placeholder="instagram" parsley-trigger="change" required> 
+                                                        <input type="text" name="kids_keterangan" class="form-control" id="field-1" placeholder="instagram" parsley-trigger="change" required> 
                                                     </div>
                                                 </div> 
                                             </div> 
@@ -598,7 +639,7 @@ $id_store     = "2";
 $id_customer  = $_POST['regular_id_customer'];
 $fullname     = $_POST['regular_fullname'];
 $nickname     = $_POST['regular_nickname'];
-$customer_group  = $_POST['customer_group'];
+$customer_group  = $_POST[' reguler_customer_group'];
 $gender       = $_POST['regular_gender'];
 
 $bd_dd      = $_POST['regular_bd_dd'];
@@ -607,8 +648,8 @@ $bd_yyyy    = $_POST['regular_bd_yyyy'];
 $birthday   = $bd_yyyy.'-'.$bd_mm.'-'.$bd_dd;
 
 $email          = $_POST ['regular_email'];
-$phone_mobile   = $_POST ['regular_hp'];
-$address        = $_POST  ['regular_address'];
+$phone_mobile   = $_POST ['regular_phone_mobile'];
+$address_customer = $_POST ['regular_address_customer'];
 $kodepos        = $_POST ['regular_kodepos'];
 $city           = $_POST ['regular_city'];
 
@@ -647,7 +688,7 @@ $create_customer = mysqli_query($con,$sql_customer);
                                         <div class="col-md-6"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Category</label> 
-                                                <input type="text" name="customer_group" class="form-control" id="field-1" value="regular" required parsley-trigger="change" readonly>
+                                                <input type="text" name="regular_customer_group" class="form-control" id="field-1" value="regular" required parsley-trigger="change" readonly>
                                             </div> 
                                         </div>  
                                        
@@ -702,14 +743,14 @@ $create_customer = mysqli_query($con,$sql_customer);
                                         <div class="col-md-6">
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Phone Mobile</label> 
-                                                <input type="text" name="regular_hp" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
+                                                <input type="text" name="regular_phone_mobile" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
                                             </div> 
                                         </div> 
 
                                         <div class="col-md-12"> 
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">Address</label> 
-                                                <input type="text" name="regular_address" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
+                                                <input type="text" name="regular_address_customer" class="form-control" id="field-1" placeholder="" required parsley-trigger="change"> 
                                             </div> 
                                         </div>
                                         
