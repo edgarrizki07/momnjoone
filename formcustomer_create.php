@@ -438,7 +438,7 @@ if($cat_cust=="pregnancy"){
         $fullname   = $_POST['kids_fullname'];
         $nickname   = $_POST['kids_nickname'];
         $customer_group = $_POST['kids_customer_group'];
-        $gender = $_POST['kids_gender'];`  
+        $gender = $_POST['kids_gender'];  
         $bd_dd = $_POST['kids_bd_dd'];
         $bd_mm = $_POST['kids_bd_mm'];
         $bd_yyyy = $_POST['kids_bd_yyyy'];
@@ -446,7 +446,7 @@ if($cat_cust=="pregnancy"){
         $email = $_POST['kids_email'];
         $phone_mobile = $_post['kids_phone_mobile'];
         $address_customer = $_POST ['kids_address_customer'];
-        $kodepos    = $_POST ['kids_kodepos'];
+        $kodepos  = $_POST ['kids_kodepos'];
         $city   = $_POST ['kids_city'];
         $emergency_name = $_POST['kids_emergency_name'];
         $emergency_phone = $_POST['kids_emergency_phone'];
@@ -472,7 +472,7 @@ $create_customer = mysqli_query($con,$sql_customer);
 							<div class="col-lg-10">
 								<div class="card-box">
 		                                        
-									<form action="master_customer.php" data-parsley-validate novalidate>
+                                <form method="POST" action="" data-parsley-validate novalidate > 
                                     <div class="row"> 
 
                                         <div class="col-md-6"> 
@@ -533,7 +533,7 @@ $create_customer = mysqli_query($con,$sql_customer);
                                         <div class="col-md-6">
                                             <div class="form-group"> 
                                                 <label for="field-1" class="control-label">email</label> 
-                                                <input type="email" name="kids_email" class="form-control" id="field-1" placeholder="nama@domain.com" required parsley-trigger="change"> 
+                                                <input type="email" name="kids_email" class="form-control" id="field-1" placeholder="email" required parsley-trigger="change"> 
                                             </div> 
                                         </div> 
 
@@ -607,10 +607,9 @@ $create_customer = mysqli_query($con,$sql_customer);
                                             </div> 
                                         </div> 
 
-                                         <div class="col-md-12">  
+                                        <div class="col-md-12">  
                                             <div class="form-group text-center m-b-0">
-                                                <button class="btn w-md btn-default waves-effect waves-light" type="submit">
-                                                Save</button>
+                                                <button type="submit" name="kids_btn_simpan" class="btn w-md btn-default waves-effect waves-light"> Save</button>
                                                 <button type="button" onclick="goBack()" class="btn btn-primary w-md waves-effect waves-light m-l-5">
                                                 Back</button>
                                                 <button type="reset" class="btn w-md waves-effect waves-light m-l-5">
@@ -639,7 +638,7 @@ $id_store     = "2";
 $id_customer  = $_POST['regular_id_customer'];
 $fullname     = $_POST['regular_fullname'];
 $nickname     = $_POST['regular_nickname'];
-$customer_group  = $_POST[' reguler_customer_group'];
+$customer_group  = $_POST[' regular_customer_group'];
 $gender       = $_POST['regular_gender'];
 
 $bd_dd      = $_POST['regular_bd_dd'];
