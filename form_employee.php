@@ -287,6 +287,61 @@ if($action=="update"){
 <?php 
 } else if($action=="create"){
 ?>
+
+
+<?php
+	$nocs	= mysqli_query($con, "SELECT MAX(id_employee) FROM employee");
+	$noemployee	= $nocs + 1;
+	$noemployee_mix = str_pad($noemployee, 6, "0", STR_PAD_LEFT);
+
+
+  if (isset($_POST['employee_btn_simpan'])){
+        $id_employee = "2";
+        $id_store  = $_POST['emp_id_store'];
+        $nik   = $_POST['emp_nik'];
+        $fullname   = $_POST['emp_fullname'];
+        $position_job = $_POST['emp_position_job'];
+        $gender = $_POST['emp_gender'];  
+
+        $date_birth   = $bd_yyyy.'-'.$bd_mm.'-'.$bd_dd
+        $bd_dd = $_POST['emp_bd_dd']; 
+        $bd_mm = $_POST['emp_bd_mm'];
+        $bd_yyyy = $_POST['emp_bd_yyyy'];
+
+        $address = $_POST['emp_address'];
+        $poscode  = $_post['emp_posekode'];
+        $phone = $_POST ['emp_phone'];
+        $kodepos  = $_POST ['pregnancy_kodepos'];
+        $profile_photo   = $_POST ['emp_profile_photo'];
+        $date_work_star = $bd_yyyy.'-'.$bd_mm.'-'.$bd_dd
+        $bd_dd = $_POST['emp_bd_dd']; 
+        $bd_mm = $_POST['emp_bd_mm'];
+        $bd_yyyy = $_POST['emp_bd_yyyy'];
+
+        $date_work_stop =  $bd_yyyy.'-'.$bd_mm.'-'.$bd_dd
+        $bd_dd = $_POST['emp_bd_dd']; 
+        $bd_mm = $_POST['emp_bd_mm'];
+        $bd_yyyy = $_POST['emp_bd_yyyy'];
+        
+        $work_status  = $_POST['emp_work_status'];
+        $add_by = = $_POST['emp_add_by'];;
+        $date_add   = "$datetime_set";
+        
+        $sql_emlpoyee="INSERT INTO employee (id_employee, id_store, nik, fullname, nickname, customer_group, gender, birthday, email, phone_mobile, address_customer, kodepos, city, emergency_name, emergency_phone, emergency_status, customer_info, keterangan, date_add) 
+        values('$id_store', '$id_customer', '$fullname', '$nickname', '$customer_group', '$gender', '$birthday', '$email', '$phone_mobile', '$address_customer', '$kodepos', '$city', '$emergency_name', '$emergency_phone', '$emergency_status', '$customer_info','$keterangan', '$date_add')";
+
+        $sql_customer_ref_medical="INSERT INTO customer_ref_medical (id_customer, fullname, hospital, doctor)
+        values('$id_customer', '$fullname', '$hospital', '$doctor')";
+
+        $create_customer = mysqli_query($con,$sql_customer);
+        $create_customer_ref_medical = mysqli_query($con,$sql_customer_ref_medical);
+
+
+} else {
+
+}
+?>
+
 <!-- Create Employee -->  
 
 						<!-- Page-Title -->
