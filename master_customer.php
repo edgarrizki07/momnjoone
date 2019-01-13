@@ -168,23 +168,11 @@ include("include/db_config.php");
                              width="100%">
                              <thead>
                             <tr>
-                                <th></th> 
-                                <th>ID Customer</th> 
-                                <th> Category </th>
+                                <th>Transaction</th>
+                                <th>Id Customer</th> 
                                 <th>Full Name</th>
-                                <th>Gender</th>
-                                <th>Email</th>
-                                <th>Address Customer</th>
-                                <th>Zip Code</th> 
-                                <th>City</th> 
-                                <th>Emergency Phone Mobile</th>
-                                <th> Emergency Name </th>
-                                <th> Emergency Phone </th>
-                                <th> Emergency Status </th>
-                                <th> Phone Mobile </th>
-                                <th> Nick Name </th>
-                                <th> Date Of Birth </th>
-                                <th> How Can your Customer Know About Us </th>
+                                <th>Category</th>
+                                <th>Address</th> 
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>  
@@ -204,22 +192,11 @@ include("include/db_config.php");
                                    New Transaction</span> </button>
                                     </a>
                                 </td>
-                                <td> <td><?php echo $rowpg['id_customer'] ?></td> </td>
-                                <td><td><?php echo $rowpg['customer_group'] ?></td></td>
-                                <td><td><?php echo $rowpg['fullname'] ?></td> </td>
-                                <td><td><?php echo $rowpg['gender'] ?></td> </td>
-                                <td><td><?php echo $rowpg['email'] ?></td> </td>
-                                <td><td><?php echo $rowpg['address_customer'] ?></td> </td>
-                                <td><td><?php echo $rowpg['kodepos'] ?></td> </td>
-                                <td><td><?php echo $rowpg['city'] ?></td></td>
-                                <th><td><?php echo $rowpg['emergency_name'] ?> </td> </td>
-                                <td><td><?php echo $rowpg['emergency_phone'] ?></td></td>
-                                <td><td><?php echo $rowpg['emergency_status'] ?> </td></td>
-                                <td><td><?php echo $rowpg['phone_mobile'] ?> </td></td>
-                                <td><td><?php echo $rowpg['nickname']?></td></td>
-                                <td><?php echo $rowpg['birtday'] ?></td></td>
-                                <td><?php echo $rowpg['customer_info'] ?></td></td>
-                                <td class="text-center">
+                                <td><?php echo $rowpg['id_customer'] ?></td> 
+                                <td><?php echo $rowpg['fullname'] ?></td>
+                                <td><?php echo $rowpg['customer_group'] ?></td>
+                                <td><?php echo $rowpg['address_customer'] ?></td>
+                                <td class="text-center">   
                                 <a href="?update=">
                                 <button type="button" class="btn btn-xs btn-warning waves-effect waves-light"> <i class="fa fa-edit m-r-5"></i> <span>
                                 Edit</span> </button>

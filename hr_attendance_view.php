@@ -5,7 +5,7 @@ include("include/db_config.php");
 <html>
 <head>
     <link rel="shortcut icon" href="assets/images/favicon_1.ico">
-    <title>Product</title>
+    <title>Employee</title>
     <!-- DataTables -->
     <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
     <link href="assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -38,7 +38,7 @@ include("include/db_config.php");
 
     <?php include "sidemenu.php"; ?>
     <!-- Left Sidebar End -->
-
+    
     <!-- Start right Content here -->
     <div class="content-page">
         <!-- Start content -->
@@ -50,110 +50,55 @@ include("include/db_config.php");
                     <div class="col-sm-12">
                         <div class="pull-right m-t-15">
                             <!--<button class="btn btn-pink waves-effect waves-light" data-toggle="modal" data-target="#addProduct-modal"><i class="md md-add"></i> Add New</button>-->
-                            <a href="formproduct_create.php">
-                            <button class="btn btn-pink waves-effect waves-light"><i class="md md-add"></i> Add Product</button>
-                            </a>
-                            <a href="master_product_group.php">
-                            <button class="btn w-sm btn-primary waves-effect waves-light"><i class="fa fa-cubes"></i> Group</button>
-                            </a>
                         </div>
 
-                        <h4 class="page-title">Product</h4>
+                        <h4 class="page-title">Employee</h4>
                         <ol class="breadcrumb">
                             <li>
                                 <a href="index.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                Product
+                                Employee
                             </li>
                         </ol>
                     </div>
                 </div>
 
-                        <div class="row">
-							<div class="col-sm-12">
-								<div class="card-box widget-inline">
-									<div class="row">
-										<div class="col-lg-4 col-sm-4">
-											<div class="widget-inline-box text-center">
-												<h3><i class="text-primary fa fa-cube"></i> <b data-plugin="counterup">10</b></h3>
-												<h4 class="text-muted">Products</h4>
-											</div>
-										</div>
-
-										<div class="col-lg-4 col-sm-4">
-											<div class="widget-inline-box text-center">
-												<h3><i class="text-custom fa fa-cubes"></i> <b data-plugin="counterup">5</b></h3>
-												<h4 class="text-muted">Product Group</h4>
-											</div>
-										</div>
-
-										<div class="col-lg-4 col-sm-4">
-											<div class="widget-inline-box text-center b-0">
-												<h3><i class="text-pink fa fa-frown-o"></i> <b data-plugin="counterup">5</b></h3>
-												<h4 class="text-muted">Out of Stock</h4>
-											</div>
-										</div>
-
-									</div>
-								</div>
-							</div>
-						</div>
-
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box table-responsive">
-                            <table id="datatable-responsive"
-                            class="table table-striped table-bordered dt-responsive nowrap" cellspacing="9"
-                             width="100%">
+                            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="5" width="100%">
                              <thead>
                             <tr>
-                                <th>Product Name</th>
-                                <th>Group</th>
-                                <th>Stock Min</th>
-                                <th>Price</th>
+                                <th>Employee Id</th> 
+                                <th>Full Name</th>
+                                <th>Clock In</th>
+                                <th>Clock Out</th>
+                                <th>Status</th>
                                 <th class="text-center">Action</th>
                             </tr>
-                            </thead>
+                            </thead>  
                             <tbody>
-
-                <?php 
-                include "include/db_config.php";
-                $data = mysqli_query($con, "SELECT * FROM m_product");
-                $number = 1;
-                while($rowpg=mysqli_fetch_array($data))
-                {
-                ?>
-                <tr>
-    
-                                <td><?php echo $rowpg['product_name'] ?></td>
-                                <td><?php echo $rowpg['group'] ?></td>
-                                <td><?php echo $rowpg['stock_limit'] ?></td>
-                                <td><?php echo $rowpg['price'] ?></td>
-                                
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td class="text-center">
-                                <a href="formproduct_update.php?update=">
-                                <button type="button" class="btn btn-xs btn-warning waves-effect waves-light"> <i class="fa fa-edit m-r-5"></i> <span>
-                                Edit</span> </button>
+                                <a href="">
+                                <button type="button" class="btn btn-sm btn-purple waves-effect waves-light"> <i class="fa fa-sign-in m-r-5"></i> <span>
+                                Setting</span> </button>
                                 </a>
-                                <a href="formproduct_delete.php?delete=">
-                                <button type="button" class="btn btn-xs btn-danger waves-effect waves-light"> <i class="fa fa-trash m-r-5"></i> <span>
-                                Delete</span> </button>
                                 </td>
                                 </a>
-                            </tr>
-                            <?php
-                }
-               ?>
-                                
+                            </tr>  
                             </tbody>
                             </table>
                         </div>
                     </div>
-
-
                 </div> <!-- end row -->
-
+            
             <!-- container -->
 
         </div> <!-- content -->
