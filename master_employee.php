@@ -21,7 +21,8 @@ include("include/db_config.php");
     <link href="assets/css/components.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/pages.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/responsive.css" rel="
+    stylesheet" type="text/css"/>
     <link href="assets/plugins/custombox/css/custombox.css" rel="stylesheet">
     <script src="assets/js/modernizr.min.js"></script>
 
@@ -75,19 +76,27 @@ include("include/db_config.php");
                             <tr>
                                 <th>ID Employee</th> 
                                 <th>Full Name</th>
-                                <th>Nick Name</th>
                                 <th>User Level</th>
+                                <th>Gender</th>
                                 <th>Active</th> 
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>  
                             <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                    
+                <?php 
+                include "include/db_config.php";
+                $data = mysqli_query($con, "SELECT * FROM employee");
+                $number = 1;
+                while ($rowpg=mysqli_fetch_array($data))
+                {
+                ?>
+                <tr>
+                                <td><?php echo $rowpg['id_employee'] ?></td>
+                                <td><?php echo $rowpg['fullname'] ?></td>
+                                <td><?php echo $rowpg['position_job'] ?></td>
+                                <td><?php echo $rowpg['gender'] ?></td>
+                                <td><?php echo $rowpg['work_status'] ?></td>
                                 <td class="text-center">
                                 <a href="form_employee.php?actn=update">
                                 <button type="button" class="btn btn-xs btn-warning waves-effect waves-light"> <i class="fa fa-edit m-r-5"></i> <span>
@@ -103,6 +112,9 @@ include("include/db_config.php");
                                 </td>
                                 </a>
                             </tr>  
+                            <?php
+                         }
+                         ?>
                             </tbody>
                             </table>
                         </div>
