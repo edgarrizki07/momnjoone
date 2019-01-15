@@ -1,3 +1,6 @@
+<?php
+    include "api/db_config.php";
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,36 +22,35 @@
         <script src="assets/js/modernizr.min.js"></script>
 
 	</head>
-<?php
-
-
-if (isset($_GET['email'])) {
-	$con = new mysqli('localhost', 'root', '', 'app_pos');
-	
-	$email = $con->real_escape_string($_GET['email']);
-	$token = $con->real_escape_string($_GET['token']);
-	
-	$sql = $con->query("SELECT id FROM users WHERE email='$email' AND token='$token'");
-	if ($sql->num_rows > 0) {
-		
-				if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    <?php
+    if(isset($_POST['submit'])){
+				$id		= $_GET['id'];
+				$password 	= md5($_POST['oldpassword']);
+				$password1 	= $_POST['password'];
+				$password2 	= $_POST['re-password'];
 				
-				$password = mysqli_real_escape_string($con,md5($_POST['password']));
-				$repassword= mysqli_real_escape_string($con,md5($_POST['re-password']));
-
-						if($password == $repassword){
-						
-							$con->query("UPDATE users SET password='$password'
-							WHERE email='$email'");
+				$cek = mysqli_query($con, "SELECT * FROM users WHERE id='$id' AND password='$password'");
+				if(mysqli_num_rows($cek) == 0){
+					echo '<div class="alert alert-danger">Password sekarang tidak tepat.</div>';
+				}else{
+					if($password1 == $password2){
+						if(strlen($password1) >= 5){
+							$pass = md5($password1);
+							$update = mysqli_query($con, "UPDATE users SET password='$pass' WHERE id='$id'");
+							if($update){
+								echo '<div class="alert alert-success">Password berhasil dirubah.</div>';
+							}else{
+								echo '<div class="alert alert-danger">Password gagal dirubah.</div>';
+							}
+						}else{
+							echo '<div class="alert alert-danger">Panjang karakter Password minimal 5 karakter.</div>';
 						}
-			} echo"<script>alert('You have new password!!');</script>";
-			header('Location: login.php');
-		} else {
-				echo '<script>alert("Email or token does not match!");</script>';
-				header('Location: login.php');
+					}else{
+						echo '<div class="alert alert-danger">Konfirmasi Password tidak tepat.</div>';
+					}
+				}
 			}
-	}
-?>
+			?>
 <body>
 <div class="account-pages"></div>
 		<div class="clearfix"></div>
@@ -63,6 +65,13 @@ if (isset($_GET['email'])) {
 
 				<div class="panel-body">
 				<form class="form-horizontal m-t-20" method="post" action="">
+                <div class="form-group has-feedback">
+							<div class="col-xs-12">
+								<input class="form-control" type="password" required="" placeholder="Old Password" name="oldpassword" value ="" required>
+								<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+							</div>
+					</div>
+
 					<div class="form-group has-feedback">
 							<div class="col-xs-12">
 								<input class="form-control" type="password" required="" placeholder="New Password" name="password" value ="" required>
@@ -81,8 +90,8 @@ if (isset($_GET['email'])) {
 					<div class="form-group text-center m-t-40">
 							<div class="col-md-12">
 							<!-- -->
-								<button class="btn btn-pink btn-block text-uppercase waves-effect waves-light" type="submit" value = "submit" >
-									submit
+								<button class="btn btn-pink btn-block text-uppercase waves-effect waves-light" name="submit" type="submit" value = "submit" >
+									Save
 								</button>
 								
 							</div>
