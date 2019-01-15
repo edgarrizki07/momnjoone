@@ -94,7 +94,7 @@
                         <li><a href="#">Store</a></li>
                         <li><a href="#">User</a></li>
                         <li><a href="register.php">Register</a></li>
-                        <li><a href="changepassword.php">change password</a></li>
+                        <li><a href="resetpassword.php">change password</a></li>
                     </ul>
                 </li>
 
