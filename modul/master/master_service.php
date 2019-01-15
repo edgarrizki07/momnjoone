@@ -1,29 +1,29 @@
 <?php
-include("include/db_config.php");
+include("../../api/db_config.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="assets/images/favicon_1.ico">
-    <title> Service</title>
-    <!--DataTables -->
-    <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css"/>
+<link rel="shortcut icon" href="../../assets/images/favicon_1.ico">
+    <title>service</title>
+    <!-- DataTables -->
+    <link href="../../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css"/>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/core.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/components.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/pages.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/custombox/css/custombox.css" rel="stylesheet">
-    <script src="assets/js/modernizr.min.js"></script>
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/css/core.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/css/components.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/css/icons.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/css/pages.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/plugins/custombox/css/custombox.css" rel="stylesheet">
+    <script src="../../assets/js/modernizr.min.js"></script>
 
 </head>
 <body class="fixed-left">
@@ -32,10 +32,10 @@ include("include/db_config.php");
 <div id="wrapper">
 
     <!-- Top Bar Start -->
-    <?php include "header.php"; ?>
+    <?php include "part/main_header.php"; ?>
     <!-- Top Bar End -->
 
-    <?php include "sidemenu.php"; ?>
+    <?php include "part/main_side.php"; ?>
     <!-- Left Dide Bar End -->
 
     <!-- Start Right Content Here -->
@@ -61,7 +61,7 @@ include("include/db_config.php");
                         <h4 class="page-title">Services</h4>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index.php">Dashboard</a>
+                                <a href="index.admin.php">Dashboard</a>
                             </li>
                             <li class="active">
                                 Services
@@ -147,7 +147,7 @@ include("include/db_config.php");
         </div> <!-- content -->
 
         <!-- footer -->
-        <?php include "footer.php"; ?>
+        <?php include "../../footer.php"; ?>
 
     </div>
     <!-- ============================================================== -->
@@ -163,46 +163,45 @@ include("include/db_config.php");
 </script>
 
 <!-- jQuery  -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/detect.js"></script>
-<script src="assets/js/fastclick.js"></script>
-<script src="assets/js/jquery.slimscroll.js"></script>
-<script src="assets/js/jquery.blockUI.js"></script>
-<script src="assets/js/waves.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/jquery.nicescroll.js"></script>
-<script src="assets/js/jquery.scrollTo.min.js"></script>
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script src="../../assets/js/detect.js"></script>
+<script src="../../assets/js/fastclick.js"></script>
+<script src="../../assets/js/jquery.slimscroll.js"></script>
+<script src="../../assets/js/jquery.blockUI.js"></script>
+<script src="../../assets/js/waves.js"></script>
+<script src="../../assets/js/wow.min.js"></script>
+<script src="../../assets/js/jquery.nicescroll.js"></script>
+<script src="../../assets/js/jquery.scrollTo.min.js"></script>
 
 <!-- Modal-Effect -->
-<script src="assets/plugins/custombox/js/custombox.min.js"></script>
-<script src="assets/plugins/custombox/js/legacy.min.js"></script>
+<script src="../../assets/plugins/custombox/js/custombox.min.js"></script>
+<script src="../../assets/plugins/custombox/js/legacy.min.js"></script>
 
-<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
+<script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../assets/plugins/datatables/dataTables.bootstrap.js"></script>
 
-<script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
-<script src="assets/plugins/datatables/buttons.bootstrap.min.js"></script>
-<script src="assets/plugins/datatables/jszip.min.js"></script>
-<script src="assets/plugins/datatables/pdfmake.min.js"></script>
-<script src="assets/plugins/datatables/vfs_fonts.js"></script>
-<script src="assets/plugins/datatables/buttons.html5.min.js"></script>
-<script src="assets/plugins/datatables/buttons.print.min.js"></script>
-<script src="assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
-<script src="assets/plugins/datatables/dataTables.keyTable.min.js"></script>
-<script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
-<script src="assets/plugins/datatables/responsive.bootstrap.min.js"></script>
-<script src="assets/plugins/datatables/dataTables.scroller.min.js"></script>
-<script src="assets/plugins/datatables/dataTables.colVis.js"></script>
-<script src="assets/plugins/datatables/dataTables.fixedColumns.min.js"></script>
+<script src="../../assets/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="../../assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+<script src="../../assets/plugins/datatables/jszip.min.js"></script>
+<script src="../../assets/plugins/datatables/pdfmake.min.js"></script>
+<script src="../../assets/plugins/datatables/vfs_fonts.js"></script>
+<script src="../../assets/plugins/datatables/buttons.html5.min.js"></script>
+<script src="../../assets/plugins/datatables/buttons.print.min.js"></script>
+<script src="../../assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+<script src="../../assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+<script src="../../assets/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="../../assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+<script src="../../assets/plugins/datatables/dataTables.scroller.min.js"></script>
+<script src="../../assets/plugins/datatables/dataTables.colVis.js"></script>
+<script src="../../assets/plugins/datatables/dataTables.fixedColumns.min.js"></script>
 
-<script src="assets/pages/datatables.init.js"></script>
+<script src="../../assets/pages/datatables.init.js"></script>
 
-<script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/parsleyjs/parsley.min.js"></script>
 
-<script src="assets/js/jquery.core.js"></script>
-<script src="assets/js/jquery.app.js"></script>
-
+<script src="../../assets/js/jquery.core.js"></script>
+<script src="../../assets/js/jquery.app.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -216,7 +215,7 @@ include("include/db_config.php");
             }
         });
         $('#datatable-scroller').DataTable({
-            ajax: "assets/plugins/datatables/json/scroller-demo.json",
+            ajax: "../../assets/plugins/datatables/json/scroller-demo.json",
             deferRender: true,
             scrollY: 380,
             scrollCollapse: true,

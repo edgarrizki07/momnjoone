@@ -79,27 +79,27 @@ if(isset($_GET['del'])){
 								<div class="card-box">
 									<h4 class="m-t-0 header-title"><b>Product Form</b></h4>
 
-                                <form method="POST" action="" data-parsley-validate novalidate >                                  
+									<form action="" data-parsley-validate novalidate>
                                     <div class="row">
 
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label for="field-1" class="control-label">Product Name</label>
-                                                <input type="text" name="productgroup_name" class="form-control" id="field-1" parsley-trigger="change" disabled>
+                                                <input type="text" name="prodName" class="form-control" id="field-1" parsley-trigger="change" disabled>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="field-1" class="control-label">ID Product</label>
-                                                <input type="text" name="product_group" class="form-control" id="field-1" disabled>
+                                                <input type="text" name="prodKode" class="form-control" id="field-1" disabled>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="field-1" class="control-label">Why delete this product ?</label>
-                                                <input type="text" name="product_group" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
+                                                <input type="text" name="prodName" class="form-control" id="field-1" placeholder="" required parsley-trigger="change">
                                             </div>
                                         </div>
 

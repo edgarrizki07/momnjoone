@@ -1,38 +1,3 @@
-<?php
-session_start();
-
-// include file
-include('api/db_config.php');
-include('include/cek_role.php');
-include('include/function.php');
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // email and password sent from form
-    $email    = mysqli_real_escape_string($con, $_POST['email']);
-    $password = mysqli_real_escape_string($con, md5($_POST['password']));
-	
-
-    $sql    = "SELECT * FROM users WHERE email = '$email' and password = '$password' ";
-    $result = mysqli_query($con, $sql);
-    $row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-    // Cek jika hasil query menghasilkan 1
-    if (mysqli_num_rows($result)) {
-        $_SESSION['role']  = $row['role'];
-		$_SESSION['email'] = $email;
-		$_SESSION['status'] = $row['status'];
-		$_SESSION['login'] = true;
-	
-		header('location: login.php');
-	}
-	else {
-        echo "<script>alert('Email or Password is incorrect!')</script>";
-	}
-	
-}
-
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -43,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		<link rel="shortcut icon" href="assets/images/favicon_1.ico">
 
-		<title>ONE - Login</title>
+		<title>Change password</title>
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
@@ -54,41 +19,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <script src="assets/js/modernizr.min.js"></script>
 
 	</head>
-	<body>
+<?php
 
-		<div class="account-pages"></div>
+
+if (isset($_GET['email'])) {
+	$con = new mysqli('localhost', 'root', '', 'app_pos');
+	
+	$email = $con->real_escape_string($_GET['email']);
+	$token = $con->real_escape_string($_GET['token']);
+	
+	$sql = $con->query("SELECT id FROM users WHERE email='$email' AND token='$token'");
+	if ($sql->num_rows > 0) {
+		
+				if ($_SERVER["REQUEST_METHOD"] == "POST") {
+				
+				$password = mysqli_real_escape_string($con,md5($_POST['password']));
+				$repassword= mysqli_real_escape_string($con,md5($_POST['re-password']));
+
+						if($password == $repassword){
+						
+							$con->query("UPDATE users SET password='$password'
+							WHERE email='$email'");
+						}
+			} echo"<script>alert('You have new password!!');</script>";
+			header('Location: login.php');
+		} else {
+				echo '<script>alert("Email or token does not match!");</script>';
+				header('Location: login.php');
+			}
+	}
+?>
+<body>
+<div class="account-pages"></div>
 		<div class="clearfix"></div>
 
+
+		<? include "side/sidemenu.php"; ?>
 		<div class="wrapper-page">
 			<div class="card-box">
 				<div class="panel-heading">
-					<h3 class="text-center"> Sign In to <br><strong class="text-custom">MOM N JO <i class="md md-account-circle"></i>NE</strong></h3>
+					<h3 class="text-center"> Change Password <br><strong class="text-custom">MOM N JO <i class="md md-account-circle"></i>NE</strong></h3>
 				</div>
 
 				<div class="panel-body">
-					<form class="form-horizontal m-t-20" action="" method="post">
-
-						<div class="form-group has-feedback">
+				<form class="form-horizontal m-t-20" method="post" action="">
+					<div class="form-group has-feedback">
 							<div class="col-xs-12">
-								<input class="form-control" type="email" required="" placeholder="Email" name="email" value ="">
-								<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+								<input class="form-control" type="password" required="" placeholder="New Password" name="password" value ="" required>
+								<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 							</div>
-						</div>
+					</div>
 
 						<div class="form-group has-feedback">
 							<div class="col-xs-12">
-								<input class="form-control" type="password" required="" placeholder="Password" name="password" type="password" value="">
+								<input class="form-control" type="password" required="" placeholder="Confirm Password" name="re-password" value ="">
 								<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 							</div>
 						</div>
-
-						
-
-						<div class="form-group text-center m-t-40">
+					<!-- <input type="password" name="password" placeholder="New Password" required/><br>
+					<input type="password" name="re-password" placeholder="Confirm Password" required/><br> -->
+					<div class="form-group text-center m-t-40">
 							<div class="col-md-12">
 							<!-- -->
-								<button class="btn btn-pink btn-block text-uppercase waves-effect waves-light" type="submit" value = "login" name = "login">
-									Log In
+								<button class="btn btn-pink btn-block text-uppercase waves-effect waves-light" type="submit" value = "submit" >
+									submit
 								</button>
 								
 							</div>
@@ -99,18 +93,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								<a href="register.php"><button class="btn btn-primary btn-block text-uppercase waves-effect waves-light"> Register</button></a>
 							</div> -->
 						</div>
-
-						<div class="form-group m-t-20 m-b-0">
-							<div class="col-sm-12">
-								<a href="password.php" class="text-dark"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
-							</div>
-							
-						</div>
-
-					</form>
-
-				</div>
+					<!-- <input type="submit" value="submit"/><br> -->
+				</form>
+	<!-- selesai form rubah password -->
 			</div>
+		</div>
 
 		</div>
 
@@ -132,5 +119,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
-	</body>
+</body>
 </html>

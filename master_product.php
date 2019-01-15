@@ -1,5 +1,5 @@
 <?php
-include("include/db_config.php");
+include("api/db_config.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,7 @@ include("include/db_config.php");
     <?php include "header.php"; ?>
     <!-- Top Bar End -->
 
-    <?php include "sidemenu.php"; ?>
+    <?php include "side/sidemenu.php"; ?>
     <!-- Left Sidebar End -->
 
     <!-- Start right Content here -->
@@ -61,7 +61,7 @@ include("include/db_config.php");
                         <h4 class="page-title">Product</h4>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index.php">Dashboard</a>
+                                <a href="index.admin.php">Dashboard</a>
                             </li>
                             <li class="active">
                                 Product

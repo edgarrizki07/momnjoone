@@ -20,9 +20,6 @@ if ($con->connect_error) {
 date_default_timezone_set('Asia/Jakarta');
 $datetime_set	= date('Y-m-d H:i:s');
 $date_set		= date('Y-m-d');
-$time_set		= date('H:i
-
-
-:s');
+$time_set		= date('H:i:s');
 
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));

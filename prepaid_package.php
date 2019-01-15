@@ -35,7 +35,7 @@
 <?php include "header.php"; ?>
 <!-- Top Bar End -->
 
-<?php include "sidemenu.php"; ?>
+<?php include "side/sidemenu.php"; ?>
 <!-- Left Sidebar End -->
 
 <!-- Start right Content here -->
@@ -56,7 +56,7 @@
                     <h4 class="page-title">Prepaid Package</h4>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.php">Dashboard</a>
+                            <a href="index.admin.php">Dashboard</a>
                         </li>
                         <li class="active">
                         Prepaid Package

@@ -7,17 +7,17 @@
                 <li class="text-muted menu-title">Navigation</li>
 
                 <li class="has_sub">
-                    <a href="index.php" class="waves-effect"><i class="ti-dashboard"></i> <span> Dashboard </span> </a>
+                    <a href="../../index.admin.php" class="waves-effect"><i class="ti-dashboard"></i> <span> Dashboard </span> </a>
                 </li>
 
                  <li class="has_sub">
-                    <a href="customer_mpc.php" class="waves-effect"><i class="ti-crown"></i> <span> MPC</span></a>
+                    <a href="#" class="waves-effect"><i class="ti-crown"></i> <span> MPC</span></a>
                  </li>
 
                 <li class="has_sub">
                      <a href="javascript:void(0);" class="waves-effect"><i class="ti-shopping-cart"></i> <span>Transaction </span> <span class = "menu-arrow"></span> </a>
                     <ul class="list-unstyled">
-                        <li><a href="sales_transaction.php"> Sles Transaction </a></li>
+                        <li><a href="../../sales_transaction.php"> Sales Transaction </a></li>
                     </ul>
                  </li>
 
@@ -48,9 +48,9 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-bookmark-alt"></i> <span> Prepaid Package </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="prepaid_package.php">Prepaid Package Data</a></li>
+                        <li><a href="../../prepaid_package.php">Prepaid Package Data</a></li>
                         <li><a href="formpackage_prepaid.php">Create Prepaid </a></li>
-                        <li><a href="prepaidpack_category.php">Category</a></li>
+                        <li><a href="#">Category</a></li>
                     </ul>
                 </li>
 
@@ -66,7 +66,7 @@
                 <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Human Resource </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="hr_absensi.php">Absensi</a></li>
+                                    <li><a href="#">Absensi</a></li>
                                     <li><a href="#">Manajemen Absensi</a></li>
                                     <li><a href="master_employee.php">Data Karyawan</a></li>
                                 </ul>
@@ -83,8 +83,8 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-settings"></i> <span> Settings </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="store.php">Store</a></li>
-                        <li><a href="user.php">User</a></li>
+                        <li><a href="#">Store</a></li>
+                        <li><a href="#">User</a></li>
                     </ul>
                 </li>
 

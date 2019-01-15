@@ -1,5 +1,5 @@
 <?php
-include("include/db_config.php");
+include("api/db_config.php");
 ?>
 
 <?php 
@@ -23,7 +23,7 @@ $create_product = mysqli_query($con,$sql_product);
 }
 ?>
 
-<!DOCTYPE html>                                             
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -60,7 +60,7 @@ $create_product = mysqli_query($con,$sql_product);
             <?php include "header.php"; ?>
             <!-- Top Bar End -->
 
-            <?php include "sidemenu.php"; ?>
+            <?php include "side/sidemenu.php"; ?>
             <!-- Left Sidebar End -->
 
 			<!-- Start right Content here -->
@@ -87,7 +87,7 @@ $create_product = mysqli_query($con,$sql_product);
 							</div>
 						</div>
 
-                        <div class="row">1
+                        <div class="row">
 							<div class="col-lg-8">
 								<div class="card-box">
 									<h4 class="m-t-0 header-title"><b>Product Form</b></h4>
@@ -105,7 +105,7 @@ $create_product = mysqli_query($con,$sql_product);
                                                 <select name="product_group" class="form-control select2" id="product_group">
                                                 <option value="1">Pilih</option>
                                                 <?php
-                                                include "include/db_config.php";
+                                                include "api/db_config.php";
                                                 $datapd = mysqli_query($con, "SELECT * FROM m_product_group");
                                                 while ($rowpd=mysqli_fetch_array($datapd)) {
                                                     ?>

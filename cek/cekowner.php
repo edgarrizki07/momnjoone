@@ -6,8 +6,10 @@
     
     // Cek Level User
     if ($_SESSION['role']!="owner") {
-        die("Anda Bukan owner");
+        header('Location: 500.php');
+        exit();
     }
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +43,7 @@
             <!-- Top Bar End -->
 
             <!-- Left Sidebar Start -->
-            <?php include "side_owner.php"; ?>
+            <?php include "side/side_owner.php"; ?>
             <!-- Left Sidebar End -->
 
             <!-- Start right Content here -->
@@ -65,6 +67,7 @@
                                 </div>
                                 <h4 class="page-title">Dashboard Owner</h4>
                                 <p class="text-muted page-title-alt">Welcome to Owner panel !</p>
+                                
                             </div>
                         </div>
 

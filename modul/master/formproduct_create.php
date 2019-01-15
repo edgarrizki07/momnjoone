@@ -1,5 +1,5 @@
 <?php
-include("include/db_config.php");
+include("../../api/db_config.php");
 ?>
 
 <?php 
@@ -29,25 +29,25 @@ $create_product = mysqli_query($con,$sql_product);
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="shortcut icon" href="assets/images/favicon_1.ico">
+		<link rel="shortcut icon" href="../../assets/images/favicon_1.ico">
 		<title>Product</title>
 
         <!-- Plugins css-->
-        <link href="assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
-        <link href="assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" />
-        <link href="assets/plugins/multiselect/css/multi-select.css"  rel="stylesheet" type="text/css" />
-        <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
-        <link href="assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+        <link href="../../assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="../../assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" />
+        <link href="../../assets/plugins/multiselect/css/multi-select.css"  rel="stylesheet" type="text/css" />
+        <link href="../../assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+        <link href="../../assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
 
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/css/responsive.css" rel="stylesheet" type="text/css" />
 
-        <script src="assets/js/modernizr.min.js"></script>
+        <script src="../../assets/js/modernizr.min.js"></script>
 
 	</head>
 
@@ -57,10 +57,10 @@ $create_product = mysqli_query($con,$sql_product);
 		<div id="wrapper">
 
             <!-- Top Bar Start -->
-            <?php include "header.php"; ?>
+            <?php include "part/main_header.php"; ?>
             <!-- Top Bar End -->
 
-            <?php include "sidemenu.php"; ?>
+             <?php include "part/main_side.php"; ?>
             <!-- Left Sidebar End -->
 
 			<!-- Start right Content here -->
@@ -75,7 +75,7 @@ $create_product = mysqli_query($con,$sql_product);
 								<h4 class="page-title">Create Product</h4>
 								<ol class="breadcrumb">
 									<li>
-										<a href="index.php">Dashboard</a>
+										<a href="index.admin.php">Dashboard</a>
 									</li>
 									<li>
 										<a href="master_product.php">Product</a>
@@ -105,7 +105,7 @@ $create_product = mysqli_query($con,$sql_product);
                                                 <select name="product_group" class="form-control select2" id="product_group">
                                                 <option value="1">Pilih</option>
                                                 <?php
-                                                include "api/db_config.php";
+                                                include "../../api/db_config.php";
                                                 $datapd = mysqli_query($con, "SELECT * FROM m_product_group");
                                                 while ($rowpd=mysqli_fetch_array($datapd)) {
                                                     ?>
@@ -191,7 +191,7 @@ $create_product = mysqli_query($con,$sql_product);
 
                 </div> <!-- content -->
 
-                <?php include 'footer.php'; ?>
+                <?php include '../../footer.php'; ?>
 
             </div>
 
@@ -204,39 +204,39 @@ $create_product = mysqli_query($con,$sql_product);
         </script>
 
         <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/bootstrap.min.js"></script>
+        <script src="../../assets/js/detect.js"></script>
+        <script src="../../assets/js/fastclick.js"></script>
+        <script src="../../assets/js/jquery.slimscroll.js"></script>
+        <script src="../../assets/js/jquery.blockUI.js"></script>
+        <script src="../../assets/js/waves.js"></script>
+        <script src="../../assets/js/wow.min.js"></script>
+        <script src="../../assets/js/jquery.nicescroll.js"></script>
+        <script src="../../assets/js/jquery.scrollTo.min.js"></script>
 
-        <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
-        <script src="assets/plugins/switchery/js/switchery.min.js"></script>
-        <script type="text/javascript" src="assets/plugins/multiselect/js/jquery.multi-select.js"></script>
-        <script type="text/javascript" src="assets/plugins/jquery-quicksearch/jquery.quicksearch.js"></script>
-        <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+        <script src="../../assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+        <script src="../../assets/plugins/switchery/js/switchery.min.js"></script>
+        <script type="text/javascript" src="../../assets/plugins/multiselect/js/jquery.multi-select.js"></script>
+        <script type="text/javascript" src="../../assets/plugins/jquery-quicksearch/jquery.quicksearch.js"></script>
+        <script src="../../assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+        <script src="../../assets/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+        <script src="../../assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+        <script src="../../assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+        <script src="../../assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
 
-        <script type="text/javascript" src="assets/plugins/autocomplete/jquery.mockjax.js"></script>
-        <script type="text/javascript" src="assets/plugins/autocomplete/jquery.autocomplete.min.js"></script>
-        <script type="text/javascript" src="assets/plugins/autocomplete/countries.js"></script>
-        <script type="text/javascript" src="assets/pages/autocomplete.js"></script>
+        <script type="text/javascript" src="../../assets/plugins/autocomplete/jquery.mockjax.js"></script>
+        <script type="text/javascript" src="../../assets/plugins/autocomplete/jquery.autocomplete.min.js"></script>
+        <script type="text/javascript" src="../../assets/plugins/autocomplete/countries.js"></script>
+        <script type="text/javascript" src="../../assets/pages/autocomplete.js"></script>
 
-        <script type="text/javascript" src="assets/pages/jquery.form-advanced.init.js"></script>
+        <script type="text/javascript" src="../../assets/pages/jquery.form-advanced.init.js"></script>
 
 
-        <script src="assets/js/jquery.core.js"></script>
-        <script src="assets/js/jquery.app.js"></script>
+        <script src="../../assets/js/jquery.core.js"></script>
+        <script src="../../assets/js/jquery.app.js"></script>
 
-        <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+        <script type="text/javascript" src="../../assets/plugins/parsleyjs/parsley.min.js"></script>
 
         <script type="text/javascript">
 			$(document).ready(function() {

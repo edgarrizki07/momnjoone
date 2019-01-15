@@ -1,4 +1,4 @@
 <?php
     session_start();
-    include ('cekkasir.php');
+    include ('cek/cekkasir.php');
 ?>

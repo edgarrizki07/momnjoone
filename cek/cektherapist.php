@@ -1,22 +1,20 @@
 <?php
     include_once('include/cek_login.php');
     include_once('include/function.php');
+    
     if (!isset($_SESSION['email'])) {
         die("Anda Belum Login");
     }
     
     // Cek Level User
-    if ($_SESSION['role']!="admin") {
+    if ($_SESSION['role']!="therapist") {
         header('Location: 500.php');
         exit();
     }
-
     if ($_SESSION['status']!="enable") {
-        header('Location: 404.php');
-     exit();
-      
+        header(' Location: 404.php');
+        exit();
     }
-   
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +22,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="assets/images/favicon_1.ico">
-        <title>Admin Dashboard </title>
+        <title>Therapist Dashboard </title>
         <!--Morris Chart CSS -->
 		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
         <link href="assets/plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" type="text/css">
@@ -50,7 +48,7 @@
             <!-- Top Bar End -->
 
             <!-- Left Sidebar Start -->
-            <?php include "side/sidemenu.php"; ?>
+            <?php include "side/side_therapist.php"; ?>
             <!-- Left Sidebar End -->
 
             <!-- Start right Content here -->
@@ -72,8 +70,8 @@
                                         <li><a href="#">Separated link</a></li>
                                     </ul>
                                 </div>
-                                <h4 class="page-title">Dashboard Admin</h4>
-                                <p class="text-muted page-title-alt">Welcome to admin panel !</p>
+                                <h4 class="page-title">Dashboard Therapist</h4>
+                                <p class="text-muted page-title-alt">Welcome to therapist panel !</p>
                             </div>
                         </div>
 
@@ -158,4 +156,5 @@
 
     </body>
 </html>
+
 

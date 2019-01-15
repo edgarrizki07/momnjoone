@@ -1,5 +1,5 @@
 <?php
-include("include/db_config.php");
+include("api/db_config.php");
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ include("include/db_config.php");
 
 
     <!-- ========== Left Sidebar Start ========== -->
-    <?php include "sidemenu.php"; ?>
+    <?php include "side/sidemenu.php"; ?>
     <!-- Left Sidebar End -->
 
 
@@ -67,7 +67,7 @@ include("include/db_config.php");
                         <h4 class="page-title">Service Group</h4>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index.php">Dashboard</a>
+                                <a href="index.admin.php">Dashboard</a>
                             </li>
                             <li>
 								<a href="master_service.php">Service</a>

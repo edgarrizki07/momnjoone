@@ -1,13 +1,6 @@
 <?php
-    include_once('include/cek_login.php');
-    if (!isset($_SESSION['email'])) {
-        die("Anda Belum Login");
-    }
-    
-    // Cek Level User
-    if ($_SESSION['role']!="kasir") {
-        die("Anda Bukan Kasir");
-    }
+include("../../cekadmin.php");
+include("api/db_config.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="assets/images/favicon_1.ico">
-        <title>Kasir mom n jo Dashboard </title>
+        <title>Admin Dashboard </title>
         <!--Morris Chart CSS -->
 		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
         <link href="assets/plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" type="text/css">
@@ -30,7 +23,7 @@
 
     </head>
 
-    <!-- start body -->
+
     <body class="fixed-left">
 
         <!-- Begin page -->
@@ -41,7 +34,7 @@
             <!-- Top Bar End -->
 
             <!-- Left Sidebar Start -->
-            <?php include "side_kasir.php"; ?>
+            <?php include "sidemenu.php"; ?>
             <!-- Left Sidebar End -->
 
             <!-- Start right Content here -->
@@ -51,9 +44,18 @@
                     <div class="container">
 
                         <!-- Page-Title -->
+              <?php
+                    $sesi = $_SESSION['username'];
+                    $query="SELECT username, nama_lengkap FROM users WHERE username='$sesi'";
+                    $result=mysqli_query($con, $query);
+                    $row=mysqli_fetch_assoc($result);
+                    $username=$row['username'];
+                    $namalengkap=$row['nama_lengkap'];
+                ?>
+
                         <div class="row">
                             <div class="col-sm-12">
-                                <div class="btn-group pull-right m-t-15">
+                                <div class="btn-group pull-right m- t-15">
                                     <button type="button" class="btn btn-default dropdown-toggle waves-effect" data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
                                     <ul class="dropdown-menu drop-menu-right" role="menu">
                                         <li><a href="#">Action</a></li>
@@ -63,8 +65,8 @@
                                         <li><a href="#">Separated link</a></li>
                                     </ul>
                                 </div>
-                                <h4 class="page-title">Dashboard Kasir</h4>
-                                <p class="text-muted page-title-alt">Welcome to Kasir mom n jo panel !</p>
+                                <h4 class="page-title">Dashboard 2</h4>
+                                <p class="text-muted page-title-alt">Welcome to momnjo admin panel !</p>
                             </div>
                         </div>
 
@@ -149,5 +151,3 @@
 
     </body>
 </html>
-
-

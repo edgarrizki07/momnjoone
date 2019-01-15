@@ -6,3 +6,6 @@
 if (isset($_SESSION['role'])) {
     header('Location: ' . $_SESSION['role'] . '.php');
 }
+
+
+?>
