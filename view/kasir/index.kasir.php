@@ -5,11 +5,15 @@
     }
     
     // Cek Level User
-    if ($_SESSION['role']!="owner") {
-        header('Location: 500.php');
+    if ($_SESSION['role']!="kasir") {
+        header('Location: error/500.php');
         exit();
     }
-    
+    if ($_SESSION['status']!="enable") {
+        header(' Location: error/404.php');
+        exit();
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +21,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="assets/images/favicon_1.ico">
-        <title>Owner Dashboard </title>
+        <title>Kasir mom n jo Dashboard </title>
         <!--Morris Chart CSS -->
 		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
         <link href="assets/plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" type="text/css">
@@ -32,7 +36,7 @@
 
     </head>
 
-
+    <!-- start body -->
     <body class="fixed-left">
 
         <!-- Begin page -->
@@ -43,7 +47,7 @@
             <!-- Top Bar End -->
 
             <!-- Left Sidebar Start -->
-            <?php include "side/side_owner.php"; ?>
+            <?php include "menu_kasir.php"; ?>
             <!-- Left Sidebar End -->
 
             <!-- Start right Content here -->
@@ -65,9 +69,8 @@
                                         <li><a href="#">Separated link</a></li>
                                     </ul>
                                 </div>
-                                <h4 class="page-title">Dashboard Owner</h4>
-                                <p class="text-muted page-title-alt">Welcome to Owner panel !</p>
-                                
+                                <h4 class="page-title">Dashboard Kasir</h4>
+                                <p class="text-muted page-title-alt">Welcome to Kasir mom n jo panel !</p>
                             </div>
                         </div>
 

@@ -1,4 +1,4 @@
 <?php
     session_start();
-    include ('cek/cekowner.php');
+    include ('view/owner/index.owner.php');
 ?>

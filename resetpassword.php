@@ -1,5 +1,8 @@
 <?php
- 
+ session_start();
+ if (!isset($_SESSION['email'])) {
+	die("Anda Belum Login");
+}
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +24,7 @@
 
         <script src="assets/js/modernizr.min.js"></script>
 		<?php
-	session_start();
+	
 	include "api/db_config.php";
 	
     if(isset($_POST['submit'])){

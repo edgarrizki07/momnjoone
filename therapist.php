@@ -1,4 +1,4 @@
 <?php
     session_start();
-        include ('cek/cektherapist.php');
+        include ('view/therapist/index.therapist.php');
 ?>

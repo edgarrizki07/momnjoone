@@ -1,4 +1,4 @@
 <?php
     session_start();
-    include ('index.manager.php');
+    include ('view/manager/index.manager.php');
 ?>

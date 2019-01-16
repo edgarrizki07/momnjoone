@@ -12,9 +12,9 @@
 <body>
     <div class="content">
         <div class="col-md-12" align="center">
-            <img src="assets/images/banned.jpg" width="450" height="250">
+            <img src="../assets/images/banned.jpg" width="450" height="250">
             <p>Maaf.... ID anda sudah tidak aktif</p>
-            <a href="logout.php"><button>Kembali</button></a>
+            <a href="../logout.php"><button>Kembali</button></a>
         </div>
     </div>
 </body>

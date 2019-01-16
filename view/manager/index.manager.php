@@ -1,22 +1,16 @@
 <?php
     include_once('include/cek_login.php');
-    include_once('include/function.php');
     if (!isset($_SESSION['email'])) {
         die("Anda Belum Login");
     }
     
     // Cek Level User
-    if ($_SESSION['role']!="admin") {
-        header('Location: 500.php');
-        exit();
+    if ($_SESSION['role']!="manager") {
+        die("Anda Bukan Manager");
     }
 
-    if ($_SESSION['status']!="enable") {
-        header('Location: 404.php');
-     exit();
-      
-    }
-   
+	 // Cek Status
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +44,7 @@
             <!-- Top Bar End -->
 
             <!-- Left Sidebar Start -->
-            <?php include "side/sidemenu.php"; ?>
+            <?php include "enu_manager.php"; ?>
             <!-- Left Sidebar End -->
 
             <!-- Start right Content here -->
@@ -72,7 +66,7 @@
                                         <li><a href="#">Separated link</a></li>
                                     </ul>
                                 </div>
-                                <h4 class="page-title">Dashboard Admin</h4>
+                                <h4 class="page-title">Dashboard Manager</h4>
                                 <p class="text-muted page-title-alt">Welcome to admin panel !</p>
                             </div>
                         </div>

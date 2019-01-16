@@ -1,4 +1,4 @@
 <?php
     session_start();
-    include ('cek/cekkasir.php');
+    include ('view/kasir/index.kasir.php');
 ?>
