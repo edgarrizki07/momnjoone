@@ -1,6 +1,43 @@
+
 <?php
-include("api/db_config.php");
+include("../../api/db_config.php");
 ?>
+
+<?php
+if (isset($_POST['btn_simpan'])){
+$id_store = "1";
+$id_customer = $_POST['cst_customer'];
+$fullname  = $_POST['cstfullname '];
+$nickname  = $_POST['cstnickname '];
+$gender = $_POST = ['cstgender'];
+$bd_dd  = $_POST['bd_dd'];
+$bd_mm  = $_POST['bd_mm'];
+$bd_yyyy  = $_POST['bd_yyyy'];
+$email = $_POST ['cstemail'];
+$phone_mobile = $_POST ['cstphone_mobile'];
+$address = $_POST  ['cstaddress'];
+$kodepos = $_POST ['cstkodepos'];
+$city = $_POST ['cstcity'];
+$emergency_name = $_POST['cstemergency_name'];
+$emergency_phone = $_POST['cstemergency_phone'];
+$emergency_status = $_POST['cstemergency_status'];
+$keterangan  = $_POST['cstketerangan'];
+$date_add       = "$datetime_set";
+// $birthday  = $bd_yyyy.'-'.$bd_mm.'-'.$bd_dd
+
+
+
+
+
+$sql_customer ="INSERT INTO customer ( id_customer, fullname, nickname, gender, bd_dd, bd_mm, bd_yyyy, birthday, email, phone_mobile, address, kodepos, city, emergency_name, emergency_phone, emergency_status, keterangan, date_add) 
+values('$id_store', '$id_customer', '$fullname','$nickname',' $gender',' $bd_dd','$bd_mm','$bd_yyyy','$birthday','$email','$phone_mobile',' $address',' $kodepos',' $city',' $emergency_name','$emergency_phone',' $emergency_status',' $keterangan','$date_add')";
+$create_customer = mysqli_query($con,$sql_customer);
+
+} else {
+
+}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
