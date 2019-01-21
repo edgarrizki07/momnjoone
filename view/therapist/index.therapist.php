@@ -61,49 +61,30 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="btn-group pull-right m-t-15">
-                                    <button type="button" class="btn btn-default dropdown-toggle waves-effect" data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
-                                    <ul class="dropdown-menu drop-menu-right" role="menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
+
                                 <h4 class="page-title">Dashboard Therapist</h4>
-                                <p class="text-muted page-title-alt">Welcome to therapist panel !</p>
+                                <p class="text-muted page-title-alt">Welcome to Therapist Panel !</p>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-6 col-sm-12">
+                            <div class="col-lg-6  col-sm-12">
+                          
                                 <div class="widget-panel widget-style-2 bg-white">
-                                    <i class="md md-attach-money text-primary"></i>
-                                    <h2 class="m-0 text-dark counter font-600">50568</h2>
-                                    <div class="text-muted m-t-5">Total Revenue</div>
+                                <i class="md md-account-child text-custom"></i>
+                                    <h2 class="m-0 text-dark counter font-600"><button type="button " onclick="goBack()" class="btn btn-primary w-md waves-effect  waves-light m-l-5 m-t-10">
+                                    Check In</button></h2>
+                                    <div class="text-muted  m-t-5"> Data Check In</div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="widget-panel widget-style-2 bg-white">
-                                    <i class="md md-add-shopping-cart text-pink"></i>
-                                    <h2 class="m-0 text-dark counter font-600">1256</h2>
-                                    <div class="text-muted m-t-5">Sales</div>
+                                <i class="md md-store-mall-directory text-info"></i>
+                                    <h2 class="m-0 text-dark counter font-600"><button type="submit" name="pregnancy_btn_simpan" class="btn w-md btn-default waves-effect waves-lightm-l-5 m-t-10"> Check Out</button></h2>
+                                    <div class="text-muted m-t-5">Data Check Out </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-sm-12">
-                                <div class="widget-panel widget-style-2 bg-white">
-                                    <i class="md md-store-mall-directory text-info"></i>
-                                    <h2 class="m-0 text-dark counter font-600">18</h2>
-                                    <div class="text-muted m-t-5">Stores</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-12">
-                                <div class="widget-panel widget-style-2 bg-white">
-                                    <i class="md md-account-child text-custom"></i>
-                                    <h2 class="m-0 text-dark counter font-600">8564</h2>
-                                    <div class="text-muted m-t-5">Customer</div>
-                                </div>
-                            </div>
+                           
                         </div>
 
                     </div> <!-- container -->

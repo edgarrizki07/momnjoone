@@ -7,10 +7,11 @@
                 <li class="text-muted menu-title">Therapist Menu</li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-serewdsver"></i> <span> Presensi Terapist </span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Presensi Terapist </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li><a href="master_product.php">Presensi Data</a></li>
                         <li><a href="master_service.php">Laporan Omset Data</a></li>
+                        <li><a href="master_profile.php">Profile</a><li>
                     </ul>
                 </li>
 

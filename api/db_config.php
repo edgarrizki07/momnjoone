@@ -7,7 +7,7 @@ define('__NOT_DIRECT', true);
 $host     = "localhost";    // MySQL host name eg. localhost
 $user     = "root";         // MySQL user. eg. root ( if your on localserver)
 $password = "";             // MySQL user password  (if password is not set for your root user then keep it empty )
-$database = "app_pos";  // MySQL Database name
+$database = "app_poshaekal";  // MySQL Database name
 
 // Connect to MySQL Database
 $con = new mysqli($host, $user, $password, $database);
